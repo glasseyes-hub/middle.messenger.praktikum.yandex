@@ -19,9 +19,11 @@
   },
   "homepage": "https://github.com/glasseyes-hub/middle.messenger.praktikum.yandex#readme",
   "devDependencies": {
+    "@anikin/parcel-transformer-handlebars-precompile": "^1.0.1",
     "parcel": "^2.7.0"
   },
   "dependencies": {
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "handlebars": "^4.7.7"
   }
 }
