@@ -1,0 +1,17 @@
+.login-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  height: 100%;
+}
+
+.login-form-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.login-form-controls {
+  display: flex;
+  flex-direction: column;
+}

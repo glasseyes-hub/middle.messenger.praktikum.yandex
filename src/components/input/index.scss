@@ -1,0 +1,31 @@
+@import "../../assets/styles/colors.scss";
+@import "../../assets/styles/variables.scss";
+
+.input {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.input-label {
+  color: $grey;
+  font-size: 9px;
+}
+
+.input-value {
+  width: 100%;
+  border: 0;
+  padding-bottom: 5px;
+  border-bottom: 1px solid $primary;
+  outline: none;
+
+  &_error {
+    color: $warning;
+  }
+}
+
+.input-warning {
+  color: $warning;
+  font-size: 9px;
+  font-weight: 400;
+}

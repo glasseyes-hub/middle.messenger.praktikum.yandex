@@ -1,0 +1,13 @@
+{{#> page centered="true"}}
+  {{#> card title="Вход"}}
+      <div class="login-form-inputs">
+        {{> input label="Логин" name="login" value="ivanivanov" errorMessage="Неверный логин" }}
+        {{> input label="Пароль" name="password" value="1234567890" }}
+      </div>
+
+      <div class="login-form-controls">
+        {{> buttonPrimary title="Авторизоваться" href="/" }}
+        {{> button title="Нет аккаунта?" href="/registration" }}
+      </div>
+  {{/card}}
+{{/page}}
