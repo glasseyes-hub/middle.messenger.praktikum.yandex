@@ -3,6 +3,7 @@
 .button_primary {
   background-color: $primary !important;
   color: white !important;
+  font-size: 13px !important;
 
   &:hover {
     background-color: $primary-lighten-5 !important;
