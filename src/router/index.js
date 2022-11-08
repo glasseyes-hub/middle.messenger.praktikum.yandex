@@ -19,9 +19,9 @@ const root = document.querySelector('#app')
 
 const router = {
     push(route) {
-        const page = route in routes ? route : '/404'
+        const pageRoute = route in routes ? route : '/404'
     
-        root.innerHTML = routes[page]()
+        root.innerHTML = routes[pageRoute]()
     },
     error(code) {
         root.innerHTML = errorPage({code})
