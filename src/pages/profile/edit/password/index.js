@@ -9,8 +9,6 @@ export default function render(params = {}) {
         second_name: "Иванов", 
         display_name: 'Иван', 
         phone: '+7 (909) 967 30 30', 
-        password: '1234567890', 
-        password_repeat: '123456789012', 
         ...params
     })
 }

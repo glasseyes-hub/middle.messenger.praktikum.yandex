@@ -1,0 +1,13 @@
+{{#> page }}
+  {{> sidebar href=backLink}}
+  <div class="profile">
+    <header class="profile__header">
+     {{> avatar image=image}}
+     <h1>{{displayName}}</h1>
+    </header>
+
+    <div class="profile__container">
+      {{> @partial-block }}
+    </div>
+  </div>
+{{/page}}

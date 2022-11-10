@@ -1,18 +1,20 @@
-  {{#> page centered="true"}}
-    {{#> card title="Регистрация"}}
-        <div class="login-form-inputs">
-          {{> input label="Почта" name="email" type="text" value="pochta@yandex.ru" }}
-          {{> input label="Логин" name="login" type="text" value="ivanivanov"  }}
-          {{> input label="Имя" name="password" type="text" value="Иван" }}
-          {{> input label="Фамилия" name="password" type="text" value="Иванов" }}
-          {{> input label="Телефон" name="password" type="text" value="+7 (909) 967 30 30" }}
-          {{> input label="Пароль" name="password" type="password" value="1234567890" error="true" }}
-          {{> input label="Пароль (еще раз)" name="password" type="password" value="1234567890" error="true" errorMessage="Неверный логин" }}
-        </div>
+{{#> page centered="true"}}
+  {{#> card title="Регистрация"}}
+    {{#> cardContent}}
+      {{#> form id="registration" method="post"}}
+        {{> input title="Почта" name="email" type="text" value=email}}
+        {{> input title="Логин" name="login" type="text" value=login}}
+        {{> input title="Имя" name="first_name" type="text" value=first_name}}
+        {{> input title="Фамилия" name="second_name" type="text" value=second_name}}
+        {{> input title="Телефон" name="phone" type="text" value=phone }}
+        {{> input title="Пароль" name="password" type="password" value=password error="true" }}
+        {{> input title="Пароль (еще раз)" name="password_repeat" type="password" value=password_repeat error="true" errorMessage="Неверный логин" }}
+      {{/form}}
+    {{/cardContent}}
 
-        <div class="login-form-controls">
-          {{> buttonPrimary title="Зарегистрироваться" href="/" }}
-          {{> button title="Войти" href="/auth" }}
-        </div>
-    {{/card}}
-  {{/page}}
+    {{#> cardControls}}
+      {{> buttonSubmit form="registration" title="Зарегистрироваться" href="/" }}
+      {{> link title="Войти" href="/auth" }}
+    {{/cardControls}}
+  {{/card}}
+{{/page}}
