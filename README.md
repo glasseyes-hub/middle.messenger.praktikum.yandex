@@ -4,6 +4,8 @@
 
 Макеты: https://www.figma.com/file/jF5fFFzgGOxQeB4CmKWTiE/Chat_external_link
 
+Ссылка на Netlify: https://dainty-gumption-97955e.netlify.app/
+
 ## Установка
 
 - `npm run dev` — запуск в режиме разработки
