@@ -1,13 +1,15 @@
 {{#> page centered="true"}}
   {{#> card title="Вход"}}
-      <div class="login-form-inputs">
-        {{> input label="Логин" name="login" value="ivanivanov" errorMessage="Неверный логин" }}
-        {{> input label="Пароль" name="password" value="1234567890" }}
-      </div>
+    {{#> cardContent}}
+      {{#> form id="auth" method="post" }}
+        {{> input title="Логин" name="login" value=login errorMessage="Неверный логин" }}
+        {{> input title="Пароль" type="password" name="password" value=password }}
+      {{/form}}
+    {{/cardContent}}
 
-      <div class="login-form-controls">
-        {{> buttonPrimary title="Авторизоваться" href="/" }}
-        {{> button title="Нет аккаунта?" href="/registration" }}
-      </div>
+    {{#> cardControls}}
+      {{> buttonSubmit title="Авторизоваться" form="auth" }}
+      {{> link title="Нет аккаунта?" href="/registration" }}
+    {{/cardControls}}
   {{/card}}
 {{/page}}

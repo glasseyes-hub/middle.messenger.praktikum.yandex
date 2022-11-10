@@ -1,0 +1,18 @@
+@import "../../../assets/styles/colors.scss";
+@import "../../../assets/styles/variables.scss";
+
+.button_submit {
+  background-color: $primary;
+  width: 280px;
+  color: white;
+  font-size: 13px;
+  height: 37px;
+  border: none;
+  border-radius: 8px;
+  transition: $transition-duration;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $primary-lighten-5;
+  }
+}

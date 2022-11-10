@@ -7,12 +7,12 @@
   gap: 8px;
 }
 
-.input-label {
+.input__label {
   color: $grey;
   font-size: 9px;
 }
 
-.input-value {
+.input__value {
   width: 100%;
   border: 0;
   padding-bottom: 5px;
@@ -24,7 +24,7 @@
   }
 }
 
-.input-warning {
+.input__warning {
   color: $warning;
   font-size: 9px;
   font-weight: 400;

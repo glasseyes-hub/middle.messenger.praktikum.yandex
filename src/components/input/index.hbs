@@ -1,11 +1,11 @@
 <label class="input">
-    <span class="input-label">{{label}}</span>
+    <span class="input__label">{{title}}</span>
     <input
-        class="input-value {{#if error}}input-value_error{{/if}}"
+        class="input__value {{#if error}}input__value_error{{/if}}"
         type="{{type}}"
         name="{{name}}"
         value="{{value}}"
-        placeholder="{{label}}"
+        placeholder="{{title}}"
     />
-    <span class="input-warning">{{errorMessage}}</span>
+    <span class="input__warning">{{errorMessage}}</span>
 </label>
