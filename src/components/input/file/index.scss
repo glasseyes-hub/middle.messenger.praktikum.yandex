@@ -1,0 +1,32 @@
+@import "../../../assets/styles/colors.scss";
+@import "../../../assets/styles/variables.scss";
+
+.input-file {
+  color: $primary;
+  font-size: 12px;
+  width: 130px;
+  text-align: center;
+  margin: 0 auto;
+
+  & label {
+    text-decoration: underline;
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  & input {
+    display: none;
+  }
+}
+
+.input-file_selected {
+  color: #8d8d8d;
+  font-size: 14px;
+
+  & label {
+    text-decoration: none;
+  }
+}

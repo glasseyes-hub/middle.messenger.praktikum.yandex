@@ -1,1 +1,10 @@
-<button class="button_submit" type="submit" form="{{form}}">{{title}}</button>
+<div class="button_submit">
+  <button
+    class="button_submit__button"
+    type="submit"
+    form="{{form}}"
+  >{{title}}</button>
+  {{#if error}}
+    <span class="button_submit__error">{{error}}</span>
+  {{/if}}
+</div>

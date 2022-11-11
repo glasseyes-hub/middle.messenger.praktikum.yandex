@@ -1,4 +1,11 @@
 {{#> profileContainer displayName=display_name backLink="/" }}
+  {{#> modal title="Загрузите файл" error="Ошибка, попробуйте еще раз"}}
+    {{#> form id="changeAvatar" method="post" enctype="multipart/form-data" }}
+      {{> inputFile name="avatar" title="Выбрать файл на компьютере" file="pic.jpg" }}
+    {{/form}}
+        {{> buttonSubmit title="Поменять" form="changeAvatar" error="Нужно выбрать файл"}}
+  {{/modal}}
+
   {{#> profileContainerBlock}}
     {{> profileInput title="Почта" name="email" value=email  disabled="true"}}
     {{> profileInput title="Логин" name="login" value=login  disabled="true"}}
