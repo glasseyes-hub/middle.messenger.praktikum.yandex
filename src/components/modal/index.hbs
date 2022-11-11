@@ -1,12 +1,13 @@
-<div class="modal">
-  <div class="modal__container">
-    <h3 class="modal__container__title {{#if error}}modal__container__title_error{{/if}}">
-      {{#if error}} {{error}}
-      {{else}} {{title}}
-      {{/if}}
-    </h3>
-    <div class="modal__content">
-      {{> @partial-block }}
+
+  <div class="modal {{#if show}}modal_show{{/if}}">
+    <div class="modal__container">
+      <h3 class="modal__container__title {{#if error}}modal__container__title_error{{/if}}">
+        {{#if error}} {{error}}
+        {{else}} {{title}}
+        {{/if}}
+      </h3>
+      <div class="modal__content">
+        {{> @partial-block }}
+      </div>
     </div>
   </div>
-</div>
