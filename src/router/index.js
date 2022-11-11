@@ -21,19 +21,16 @@ const routes = {
     '/500': getErrorPage(500),
 }
 
-const root = document.querySelector('#app')
 
 const router = {
     push(route) {
         const pageRoute = route in routes ? route : '/404'
     
-        root.innerHTML = routes[pageRoute]()
+        routes[pageRoute]()
     },
     error(code) {
-        root.innerHTML = errorPage({code})
+        errorPage({code})
     }
 }
-
-window.router = router
 
 export default router

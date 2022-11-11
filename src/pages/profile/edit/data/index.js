@@ -1,8 +1,10 @@
 import template from './index.hbs'
+import { render } from '../../../../utils/render'
 
 
-export default function render(params = {}) {
-    return template({
+
+export default function (params = {}) {
+    return render(template, {
         email: "pochta@yandex.ru", 
         login: "ivanivanov", 
         first_name: "Иван", 
