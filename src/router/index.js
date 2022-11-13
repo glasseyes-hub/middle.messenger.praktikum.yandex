@@ -33,4 +33,6 @@ const router = {
     }
 }
 
-export default router
+export {
+    router
+}
