@@ -1,10 +1,11 @@
 <div class="input-file {{#if file}}input-file_selected{{/if}}">
-  <label for="{{name}}">
+  <label class="input-file__label" for="{{name}}">
     {{#if file}} {{file}}
     {{else}} {{title}}
     {{/if}}
   </label>
   <input
+    class="input-file__input"
     type="file"
     id="{{name}}"
     name="{{name}}"
