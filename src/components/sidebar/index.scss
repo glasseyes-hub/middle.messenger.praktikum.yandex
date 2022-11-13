@@ -1,0 +1,15 @@
+@import "../../assets/styles/variables.scss";
+
+.sidebar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fbfbfb;
+  border-right: 1px solid #eaeaea;
+  width: 65px;
+  height: 100vh;
+  transition: $transition-duration;
+}

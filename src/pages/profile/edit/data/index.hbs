@@ -1,0 +1,14 @@
+{{#> profileContainer displayName=display_name backLink="/profile" }}
+    {{#> profileContainerBlock}}
+      {{#> form id="editData" method="post"}}
+        {{> profileInput title="Почта" name="email" value=email }}
+        {{> profileInput title="Логин" name="login" value=login }}
+        {{> profileInput title="Имя" name="first_name" value=first_name }}
+        {{> profileInput title="Фамилия" name="second_name" value=second_name}}
+        {{> profileInput title="Имя в чате" name="display_name" value=display_name }}
+        {{> profileInput title="Телефон" name="phone" value=phone }}
+      {{/form}}
+    {{/profileContainerBlock}}
+
+    {{> buttonSubmit title="Сохранить" form="editData"}}
+{{/profileContainer}}

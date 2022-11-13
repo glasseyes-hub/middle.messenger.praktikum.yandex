@@ -1,0 +1,12 @@
+@import "../../assets/styles/colors.scss";
+@import "../../assets/styles/variables.scss";
+
+.link {
+  color: $primary;
+  font-size: 13px;
+  text-decoration: none;
+  transition: $transition-duration;
+  &:hover {
+    opacity: 0.8;
+  }
+}

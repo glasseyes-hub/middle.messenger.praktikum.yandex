@@ -1,0 +1,15 @@
+{{#> page centered="true"}}
+  {{#> card title="Вход"}}
+    {{#> cardContent}}
+      {{#> form id="auth" method="post" }}
+        {{> input title="Логин" name="login" value=login errorMessage="Неверный логин" }}
+        {{> input title="Пароль" type="password" name="password" value=password }}
+      {{/form}}
+    {{/cardContent}}
+
+    {{#> cardControls}}
+      {{> buttonSubmit title="Авторизоваться" form="auth" }}
+      {{> link title="Нет аккаунта?" href="/registration" }}
+    {{/cardControls}}
+  {{/card}}
+{{/page}}

@@ -1,0 +1,23 @@
+{{#> profileContainer displayName=display_name backLink="/" }}
+  {{#> modal title="Загрузите файл" show=false error="Ошибка, попробуйте еще раз"}}
+    {{#> form id="changeAvatar" method="post" enctype="multipart/form-data" }}
+      {{> inputFile name="avatar" title="Выбрать файл на компьютере" file="pic.jpg" }}
+    {{/form}}
+        {{> buttonSubmit title="Поменять" form="changeAvatar" error="Нужно выбрать файл"}}
+  {{/modal}}
+
+  {{#> profileContainerBlock}}
+    {{> profileInput title="Почта" name="email" value=email disabled=true}}
+    {{> profileInput title="Логин" name="login" value=login disabled=true}}
+    {{> profileInput title="Имя" name="first_name" value=first_name disabled=true}}
+    {{> profileInput title="Фамилия" name="second_name" value=second_name disabled=true}}
+    {{> profileInput title="Имя в чате" name="display_name" value=display_name disabled=true}}
+    {{> profileInput title="Телефон" name="phone" value=phone disabled=true}}
+  {{/profileContainerBlock}}
+
+  {{#> profileContainerBlock}}
+    {{> profileLink title="Изменить данные" href="/profile/edit/data"}}
+    {{> profileLink title="Изменить пароль" href="/profile/edit/password"}}
+    {{> profileLink title="Выйти" href="/logout" color="#FF0000"}}
+  {{/profileContainerBlock}}
+{{/profileContainer}}

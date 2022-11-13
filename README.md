@@ -1,1 +1,32 @@
-Ссылка на Sprint 1 pull request: https://github.com/glasseyes-hub/middle.messenger.praktikum.yandex/pull/1
+## Описание
+
+Месседжер на Vanilla JS с использованием шаблонизатора Handlebars.
+
+Макеты: https://www.figma.com/file/jF5fFFzgGOxQeB4CmKWTiE/Chat_external_link
+
+Ссылка на Netlify: https://dainty-gumption-97955e.netlify.app/
+
+## Установка
+
+- `npm run dev` — запуск в режиме разработки
+- `npm run build` — сборка проекта
+- `npm run start` — запуск проекта локально на Express.js
+
+## Роутинг
+
+На данный момент в проекте сверстаны следующие страницы:
+
+- / - главная страницы
+- /auth - авторизация
+- /registration - регистрация
+- /profile - профиль
+- /profile/edit/data - страница изменения данных
+- /profile/edit/password - страница изменения пароля
+- /404 (+ любой не существующий роут) - страница ошибки 404
+- /500 - страница ошибки 500
+
+Все роуты прописаны в /src/router/index.js
+
+## Дополнительно
+
+Данный проект является результатом прохождения курса "Мидл фронтенд-разработчик" от Яндекс.Практикум
