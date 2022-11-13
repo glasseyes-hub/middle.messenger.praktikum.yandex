@@ -1,10 +1,10 @@
-import mainPage from '../pages/main'
-import authPage from '../pages/auth'
-import registrationPage from '../pages/registration'
-import errorPage from '../pages/error'
-import profilePage from '../pages/profile'
-import profileEditDataPage from '../pages/profile/edit/data'
-import profileEditPasswordPage from '../pages/profile/edit/password'
+import {mainPage} from '../pages/main'
+import {authPage} from '../pages/auth'
+import {registrationPage} from '../pages/registration'
+import {errorPage} from '../pages/error'
+import {profilePage} from '../pages/profile'
+import {profileEditDataPage} from '../pages/profile/edit/data'
+import {profileEditPasswordPage} from '../pages/profile/edit/password'
 
 function getErrorPage(code) {
     return () => errorPage({code})

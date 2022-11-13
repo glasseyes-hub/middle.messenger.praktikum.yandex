@@ -1,3 +1,3 @@
 import template from './index.hbs'
 
-export default template
+export const profileLink = template
