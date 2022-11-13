@@ -3,7 +3,7 @@ import { render } from '../../../../utils/render'
 
 
 
-export default function (params = {}) {
+export function profileEditDataPage(params = {}) {
     return render(template, {
         email: "pochta@yandex.ru", 
         login: "ivanivanov", 

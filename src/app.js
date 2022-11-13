@@ -1,6 +1,6 @@
 import './main.scss'
 
-import router from './router'
+import {router} from './router'
 import Handlebars from 'handlebars/dist/handlebars.runtime'
 
 import {page} from './components/page'
