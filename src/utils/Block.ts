@@ -142,11 +142,17 @@ export class Block {
       const content = child.getContent();
 
       if(content) {
-        stub.replaceWith(content);
-
         if (stub.childNodes.length) {
-          content.append(...stub.childNodes);
+          const slot = content.querySelector('slot')
+
+          if(slot) {
+            slot.replaceWith(...stub.childNodes)
+          } else {
+            content.append(...stub.childNodes);
+          }
         }
+
+        stub.replaceWith(content);
       }
     });
 

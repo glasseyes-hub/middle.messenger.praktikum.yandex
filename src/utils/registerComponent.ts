@@ -19,6 +19,7 @@ export function registerComponent(name: string, Component: typeof Block) {
       data.root.refs[hash.ref] = component;
     }
 
+
     const contents: string = fn ? fn(this) : '';
 
     return `<div data-id="${component.id}">${contents}</div>`;

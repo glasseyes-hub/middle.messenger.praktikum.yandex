@@ -1,7 +1,8 @@
-import {MainPage} from '../pages/main'
 import {Block} from '../utils/Block'
 import {render} from '../utils/render'
-// import {authPage} from '../pages/auth'
+
+import {MainPage} from '../pages/main'
+import {AuthPage} from '../pages/auth'
 // import {registrationPage} from '../pages/registration'
 // import {errorPage} from '../pages/error'
 // import {profilePage} from '../pages/profile'
@@ -16,7 +17,7 @@ type Routes = Record<string, typeof Block>
 
 const routes: Routes = {
     '/': MainPage,
-    // '/auth': authPage,
+    '/auth': AuthPage,
     // '/registration': registrationPage,
     // '/profile': profilePage,
     // '/profile/edit/data': profileEditDataPage,
