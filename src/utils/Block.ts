@@ -2,8 +2,12 @@ import { v4 as uuidv4 } from 'uuid';
 import * as Handlebars from 'handlebars';
 import EventBus from './EventBus';
 
-type Props = Record<string, unknown>
+type Props = {
+  [key: string]: unknown | Block | Children,
+  events?: ElementEvents,
+}
 type Children = Record<string, Block>
+type ElementEvents = Record<string, () => void>
 
 export default class Block {
   static EVENTS = {
@@ -49,7 +53,7 @@ export default class Block {
   }
 
 
-  private getPropsAndChildren(data: Props | Children ) {
+  private getPropsAndChildren(data: Props ) {
     const children: Children = {};
     const props: Props = {};
 
@@ -175,15 +179,19 @@ export default class Block {
     });
   }
 
+  protected events(): Record<string, object> | false {
+    return false
+  }
+
   private _addEvents() {
-    const { events } = this.props;
+    const events = this.props.events;
 
     if (!events) {
       return;
-    }  
+    }
 
     Object.entries(events).forEach(([event, listener]) => {
-      if(this._element) this._element.addEventListener(event, listener);
+      this._element?.addEventListener(event, listener);
     });
   }
 
