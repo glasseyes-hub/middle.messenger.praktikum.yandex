@@ -1,9 +1,8 @@
-import Block from './Block';
+import {Block} from './Block';
 import * as Handlebars from 'handlebars';
 
 export function registerComponent(name: string, Component: typeof Block) {
   Handlebars.registerHelper(name, function ( { hash, data, fn }: Handlebars.HelperOptions) {
-    // console.log('123')
     if (!data.root.children) {
       data.root.children = {};
     }
@@ -12,19 +11,13 @@ export function registerComponent(name: string, Component: typeof Block) {
       data.root.refs = {};
     }
 
-
-    console.log(hash)
-
     const component = new Component(hash);
 
     data.root.children[component.id] = component
 
-
-
     if (hash.ref) {
       data.root.refs[hash.ref] = component;
     }
-
 
     const contents: string = fn ? fn(this) : '';
 
