@@ -9,7 +9,7 @@ type Props = {
 type Children = Record<string, Block>
 type ElementEvents = Record<string, () => void>
 
-export default class Block {
+export class Block {
   static EVENTS = {
     INIT: 'init',
     FLOW_CDM: 'flow:component-did-mount',
@@ -121,7 +121,6 @@ export default class Block {
     }
 
     this._element = newElement;
-
 
     this._addEvents();
   }
