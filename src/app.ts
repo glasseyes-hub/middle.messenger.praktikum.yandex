@@ -1,6 +1,7 @@
-import {HomePage} from './pages/home'
-import {Button} from './components/test'
 import {registerComponent} from './utils/registerComponent'
+import {router} from './router'
+
+import {PageComponent} from './components/page'
 
 // import './main.scss'
 
@@ -46,19 +47,11 @@ import {registerComponent} from './utils/registerComponent'
 // Handlebars.registerPartial('profileLink', profileLink)
 // Handlebars.registerPartial('modal', modal)
 
-registerComponent('Button', Button)
+registerComponent('Page', PageComponent)
 
 document.addEventListener('DOMContentLoaded', () => {   
-    // router.push(window.location.pathname)
-    const root = document.querySelector('#app')
+    router.push(window.location.pathname)
 
-    if(!root) {
-        return
-    }
-
-    const homePage = new HomePage()
-
-    root.append(homePage.getContent() as Node)
 })
 
 
