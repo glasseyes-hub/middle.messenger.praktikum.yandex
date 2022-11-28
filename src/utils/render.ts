@@ -1,5 +1,12 @@
-export function render(template: any, params: object) {
+import {Block} from '../utils/Block'
+
+
+export function render(block: Block) {
     const root = document.querySelector('#app')
 
-    if(root) root.innerHTML = template(params)
+    if(!root) {
+        return
+    }
+
+    root.append(block.getContent() as Node)
 }
