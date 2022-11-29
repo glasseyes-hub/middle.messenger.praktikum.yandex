@@ -3,41 +3,36 @@ import {render} from '../utils/render'
 
 import {MainPage} from '../pages/main'
 import {AuthPage} from '../pages/auth'
-// import {registrationPage} from '../pages/registration'
-// import {errorPage} from '../pages/error'
-// import {profilePage} from '../pages/profile'
-// import {profileEditDataPage} from '../pages/profile/edit/data'
-// import {profileEditPasswordPage} from '../pages/profile/edit/password'
+import {RegistrationPage} from '../pages/registration'
+import {ErrorPage} from '../pages/error'
+import {ProfilePage} from '../pages/profile'
+import {ProfileEditDataPage} from '../pages/profile/edit/data'
+import {ProfileEditPasswordPage} from '../pages/profile/edit/password'
 
-// function getErrorPage(code) {
-//     return () => errorPage({code})
-// }
 
 type Routes = Record<string, typeof Block>
 
 const routes: Routes = {
-    '/': MainPage,
-    '/auth': AuthPage,
-    // '/registration': registrationPage,
-    // '/profile': profilePage,
-    // '/profile/edit/data': profileEditDataPage,
-    // '/profile/edit/password': profileEditPasswordPage,
-    // '/404': getErrorPage(404),
-    // '/500': getErrorPage(500),
+  '/': MainPage,
+  '/auth': AuthPage,
+  '/registration': RegistrationPage,
+  '/profile': ProfilePage,
+  '/profile/edit/data': ProfileEditDataPage,
+  '/profile/edit/password': ProfileEditPasswordPage,
 }
 
 
 const router = {
-    push(route: string) {
-        const pageRoute = route in routes ? route : '/404'
+  push(route: string) {
+    const pageRoute = route in routes ? route : '/404'
 
-        render(new routes[pageRoute]())
-    },
-    // error(code: string) {
-    //     errorPage({code})
-    // }
+    render(new routes[pageRoute]())
+  },
+  error(code: string) {
+    render(new ErrorPage({code}))
+  }
 }
 
 export {
-    router
+  router
 }
