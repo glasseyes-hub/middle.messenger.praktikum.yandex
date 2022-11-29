@@ -17,6 +17,8 @@ export class Block {
     FLOW_RENDER: 'flow:render',
   };
 
+  private HTMLEvents = ['click', 'focus', 'blur']
+
   private _element: HTMLElement | null = null;
   private eventBus: () => EventBus;
   
@@ -195,9 +197,19 @@ export class Block {
       return;
     }
 
-    Object.entries(events).forEach(([event, listener]) => {
-      this._element?.addEventListener(event, listener);
-    });
+    this.HTMLEvents.forEach(event => {
+      const elements = this._element?.querySelectorAll(`[${event}]`)
+
+      if(elements) {
+        elements.forEach(el => {
+          const callback = el.getAttribute(event)
+
+          if(callback && callback in events) {
+            el.addEventListener(event, events[callback])
+          }
+        })
+      }
+    })
   }
 
   private _removeEvents() {
@@ -207,9 +219,19 @@ export class Block {
       return;
     }
     
-    Object.entries(events).forEach(([event, listener]) => {
-      if(this._element) this._element.removeEventListener(event, listener);
-    });
+    this.HTMLEvents.forEach(event => {
+      const elements = this._element?.querySelectorAll(`[${event}]`)
+
+      if(elements) {
+        elements.forEach(el => {
+          const callback = el.getAttribute(event)
+
+          if(callback && callback in events) {
+            el?.removeEventListener(event, events[callback])
+          }
+        })
+      }
+    })
   }
 
 
