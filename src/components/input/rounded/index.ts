@@ -1,4 +1,4 @@
-import {Block} from '../../utils/Block';
+import {Block} from '../../../utils/Block';
 import './index.scss'
 
 
@@ -11,7 +11,7 @@ type Props = {
   errorMessage: string
 }
 
-export class InputComponent extends Block {
+export class InputRoundedComponent extends Block {
   constructor(props: Props) {
     super({
       ...props,
@@ -34,19 +34,19 @@ export class InputComponent extends Block {
   render() {
     // language=hbs
     return `
-      <label class="input">
-        <span class="input__label" click=ontitleClick>{{title}}</span>
-        <input
-          class="input__value {{#if error}}input__value_error{{/if}}"
-          type="{{type}}"
-          name="{{name}}"
-          value="{{value}}"
-          placeholder="{{title}}"
-          click=onInputClick
-          blur=onInputBlur
-        />
-        <span class="input__warning">{{errorMessage}}</span>
-      </label>
+    <input
+      class="
+        input-rounded 
+        {{#if round}}input-rounded_{{round}}{{/if}}
+        {{#if error}}input-rounded_error{{/if}} 
+      "
+      type="{{type}}"
+      name="{{name}}"
+      value="{{value}}"
+      placeholder="{{title}}"
+      click=onInputClick
+      blur=onInputBlur
+    />
     `
   }
 }

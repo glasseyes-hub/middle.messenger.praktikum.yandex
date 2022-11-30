@@ -2,11 +2,16 @@
 @import "../../assets/styles/variables.scss";
 
 .link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
   color: $primary;
+  font-weight: 500;
   font-size: 13px;
   text-decoration: none;
   transition: $transition-duration;
-  &:hover {
-    opacity: 0.8;
-  }
+}
+
+.link__icon {
+  margin-top: 2px;
 }

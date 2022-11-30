@@ -16,13 +16,19 @@ export class LinkComponent extends Block {
   render() {
     // language=hbs
     return `
-      <a 
-        class="link" 
-        {{#if color}}style="color: {{color}} !important;"{{/if}} 
-        href="{{href}}"
-      >
+    <a 
+      class="link" 
+      {{#if color}}style="color: {{color}} !important;"{{/if}} 
+      href="{{href}}"
+    >
+      <span class="link__title">
         {{title}}
-      </a>
+      </span>
+      <div class="link__icon">
+        <slot></slot>
+      </div>
+    </a>
+
     `
   }
 }
