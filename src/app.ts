@@ -11,6 +11,7 @@ import {FormComponent} from './components/form'
 import {InputComponent} from './components/input'
 import {InputRoundedComponent} from './components/input/rounded'
 import {InputFileComponent} from './components/input/file'
+import {InputErrorComponent} from './components/input/error'
 import {ButtonComponent} from './components/button'
 import {ButtonSumbitComponent} from './components/button/submit'
 import {ButtonRoundedComponent} from './components/button/rounded'
@@ -38,6 +39,7 @@ registerComponent('Form', FormComponent)
 registerComponent('Input', InputComponent)
 registerComponent('InputRounded', InputRoundedComponent)
 registerComponent('InputFile', InputFileComponent)
+registerComponent('InputError', InputErrorComponent)
 registerComponent('Button', ButtonComponent)
 registerComponent('ButtonSubmit', ButtonSumbitComponent)
 registerComponent('ButtonRounded', ButtonRoundedComponent)

@@ -1,5 +1,8 @@
 import {Block} from '../../utils/Block';
 import './index.scss'
+import  '../../utils/validate'
+import { validate } from '../../utils/validate';
+import {INCORRECT_PASSWORD} from '../../constant/errors'
 
 
 type Props = {
@@ -9,27 +12,32 @@ type Props = {
   value: string,
   error: boolean,
   errorMessage: string
+  validate?: string
 }
 
 export class InputComponent extends Block {
+  private isError = false
+
   constructor(props: Props) {
     super({
       ...props,
       events: {
-        onInputClick() {
-          console.log('input click')
-        },
-        ontitleClick() {
-          console.log('title click')
-        },
-        onInputBlur(event: Event) {
-          console.log('input blur', event)
+        validate: (event: Event) => {
+          const input = (event.target as HTMLInputElement)
+
+          if(this.isError) {
+            this.refs.error.setProps({show: false})
+            this.isError = false
+          }
+
+          if(props.validate && !validate(props.validate, input.value)) {
+            this.refs.error.setProps({show: true, text: INCORRECT_PASSWORD})
+            this.isError = true
+          }
         }
       }
-
     });
-
-  }
+    }
 
   render() {
     // language=hbs
@@ -42,10 +50,10 @@ export class InputComponent extends Block {
           name="{{name}}"
           value="{{value}}"
           placeholder="{{title}}"
-          click=onInputClick
-          blur=onInputBlur
+          focus=validate
+          blur=validate
         />
-        <span class="input__warning">{{errorMessage}}</span>
+        {{{InputError ref="error"}}}
       </label>
     `
   }
