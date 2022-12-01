@@ -1,84 +1,81 @@
 @import "../../../assets/styles/colors.scss";
 @import "../../../assets/styles/variables.scss";
 
-.chat-message__container {
-  display: flex;
-  align-items: center;
-  border-top: 1px solid $grey-lighten-2;
-  width: 290px;
-  margin-bottom: -1px;
-  margin-left: 10px;
-  border-bottom: 1px solid $grey-lighten-2;
-}
-
 .chat-message {
   display: flex;
-  gap: 10px;
-  width: 310px;
-  height: 71px;
-  margin: 2px -10px;
-  padding: 12px 10px;
+  align-items: end;
+  gap: 4px;
+  background-color: $grey-lighten-3;
+  padding: 11px;
+  border-radius: 12px;
+  max-width: 400px;
+  border-top-left-radius: 0;
 
-  &_selected {
+  &_author {
     background-color: #e4edfd;
+    border-bottom-right-radius: 0;
+    border-top-left-radius: 12px;
+
+    .chat-message__date {
+      color: $primary;
+    }
   }
 }
 
 .chat-message__content {
   display: flex;
   flex-direction: column;
-  width: 100%;
-  gap: 4px;
+  gap: 8px;
 }
 
-.chat-message__name {
-  font-weight: 600;
-  font-size: 13px;
-  color: $black;
-}
-
-.chat-message__message {
+.chat-message__text {
   font-size: 12px;
-  color: $grey;
-  height: 47px;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  display: -webkit-box !important;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
+  white-space: pre-line;
 }
 
-.chat-message__message__author {
-  font-weight: 600;
-  color: $black;
+.chat-message__images__item {
+  display: flex;
+}
+
+.chat-message__images {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.chat-message__image {
+  width: 100%;
 }
 
 .chat-message__info {
-  position: relative;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: end;
+  align-items: center;
+  gap: 4px;
+
+  &_readed {
+    .chat-message__info__status line {
+      opacity: 1;
+      stroke: $primary;
+    }
+  }
+
+  &_delivered {
+    .chat-message__info__status line {
+      opacity: 1;
+    }
+  }
 }
 
-.chat-message__info__date {
-  position: absolute;
-  top: 0;
-  right: 0;
+.chat-message__info__status {
+  margin-top: 2px;
+  stroke: $grey;
+
+  & line {
+    opacity: 0;
+  }
+}
+
+.chat-message__date {
   font-size: 9px;
   color: $grey;
-  white-space: nowrap;
-}
-
-.chat-message__info__count {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: $primary;
-  font-size: 11px;
-  color: white;
-  text-align: center;
-  height: 20px;
-  padding: 0 7px;
-  border-radius: 50%;
 }

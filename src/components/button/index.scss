@@ -9,8 +9,10 @@
   width: 32px;
   outline: none;
   border: 0;
+  border-radius: 50%;
   background-color: transparent;
   cursor: pointer;
+  transition: $transition-duration;
 
   svg path,
   svg circle {
@@ -21,6 +23,19 @@
     svg path,
     svg circle {
       fill: $primary;
+    }
+  }
+
+  &_active {
+    background-color: $grey-lighten;
+
+    svg path,
+    svg circle {
+      fill: $primary;
+    }
+
+    &:hover {
+      opacity: 0.8;
     }
   }
 }

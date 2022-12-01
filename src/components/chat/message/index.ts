@@ -34,31 +34,34 @@ export class ChatMessageComponent extends Block {
   render() {
     // language=hbs
     return `
-      <div class="chat-message__container">
-        <div clas="chat-message__border"></div>
-
-        <div class="chat-message {{#if selected}} chat-message_selected {{/if}}">
-          <div>
-            {{{AvatarSimple avatar="{{avatar}}"}}}
-          </div>
-          <div class="chat-message__content">
-            <span class="chat-message__name">{{name}}</span>
-            <p class="chat-message__message">
-              {{#if author}}
-                <span class="chat-message__message__author">{{author}}:</span>
-              {{/if}}
-              {{message}}
-            </p>
-          </div>
-          <div class="chat-message__info">
-            <span class="chat-message__info__date">{{date}}</span>
-            {{#if count}}
-              <div class="chat-message__info__count">{{count}}</div>  
-            {{/if}}
-          </div>
+      <div class="chat-message {{#if isAuthor}}chat-message_author{{/if}}">
+        <div class="chat-message__content">
+          {{#if text}}
+            <p class="chat-message__text">{{text}}</p>
+          {{/if}}
+          {{#if images}}
+            <ul class="chat-message__images">
+              {{#images}}
+                <li class="chat-message__images__item">
+                  <img class="chat-message__image" src="{{this}}" alt="Girl in a jacket">
+                </li>
+              {{/images}}
+            </ul>
+          {{/if}}
         </div>
-
-        <div clas="chat-message__border"></div>
+        
+        <div class="
+          chat-message__info 
+          {{#ifEquals status 2}}chat-message__info_readed{{/ifEquals}}
+          {{#ifEquals status 1}}chat-message__info_delivered{{/ifEquals}}
+        ">
+          <svg class="chat-message__info__status" width="11" height="5" viewBox="0 0 11 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <line y1="-0.5" x2="3.765" y2="-0.5" transform="matrix(0.705933 0.708278 -0.705933 0.708278 0.700195 2.33313)" stroke="#3369F3"/>
+            <line y1="-0.5" x2="5.6475" y2="-0.5" transform="matrix(0.705933 -0.708278 0.705933 0.708278 3.35828 5)" stroke="#3369F3"/>
+            <line y1="-0.5" x2="5.6475" y2="-0.5" transform="matrix(0.705933 -0.708278 0.705933 0.708278 6.01587 5)" stroke="#3369F3"/>
+          </svg>
+          <span class="chat-message__date">{{date}}</span>
+        </div>
       </div>
     `
   }

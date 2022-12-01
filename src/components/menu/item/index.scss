@@ -1,0 +1,22 @@
+@import "../../../assets/styles/colors.scss";
+@import "../../../assets/styles/variables.scss";
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 10px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: $transition-duration;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+}
+
+.menu-item__title {
+  font-size: 12px;
+  white-space: nowrap;
+  margin-right: 4px;
+}

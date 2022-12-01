@@ -1,0 +1,27 @@
+@import "../../assets/styles/colors.scss";
+@import "../../assets/styles/variables.scss";
+
+.menu {
+  position: absolute;
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  padding: 5px;
+  border-radius: 12px;
+  background-color: white;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.14);
+
+  &_show {
+    display: flex;
+  }
+
+  &_top {
+    top: 50px;
+    right: 0;
+  }
+
+  &_bottom {
+    left: 0;
+    bottom: 55px;
+  }
+}

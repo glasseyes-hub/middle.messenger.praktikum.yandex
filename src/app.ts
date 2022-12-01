@@ -1,5 +1,6 @@
 import './main.scss'
 import {registerComponent} from './utils/registerComponent'
+import './utils/ifEqualsHelper'
 import {router} from './router'
 
 import {PageComponent} from './components/page'
@@ -23,6 +24,9 @@ import {ProfileLineComponent} from './components/profile/line'
 import {ProfileInputComponent} from './components/profile/input'
 import {ProfileLinkComponent} from './components/profile/link'
 import {ModalComponent} from './components/modal'
+import {MenuComponent} from './components/menu'
+import {MenuItemComponent} from './components/menu/item'
+import {ChatMenuItemComponent} from './components/chat/menuItem'
 import {ChatMessageComponent} from './components/chat/message'
 
 
@@ -47,6 +51,9 @@ registerComponent('ProfileLine', ProfileLineComponent)
 registerComponent('ProfileInput', ProfileInputComponent)
 registerComponent('ProfileLink', ProfileLinkComponent)
 registerComponent('Modal', ModalComponent)
+registerComponent('Menu', MenuComponent)
+registerComponent('MenuItem', MenuItemComponent)
+registerComponent('ChatMenuItem', ChatMenuItemComponent)
 registerComponent('ChatMessage', ChatMessageComponent)
 
 document.addEventListener('DOMContentLoaded', () => {   
