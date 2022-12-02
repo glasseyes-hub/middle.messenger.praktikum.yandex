@@ -19,16 +19,19 @@ export class ProfileEditPasswordPage extends Block {
               name="oldPassword" 
               type="password" 
               value=password
+              validate="password"
             }}}
             {{{ProfileInput 
               title="Новый пароль" 
               name="newPassword" 
               type="password"
+              validate="password"
             }}}
             {{{ProfileInput 
               title="Повторите новый пароль" 
               name="newPasswordRepeat" 
               type="password"
+              validate="password"
             }}}
           {{/Form}}
         {{/ProfileContainerBlock}}

@@ -23,21 +23,25 @@ export class ProfileEditDataPage extends Block {
               title="Почта" 
               name="email" 
               value=email
+              validate="email"
             }}}
             {{{ProfileInput 
               title="Логин" 
               name="login" 
               value=login
+              validate="login"
             }}}
             {{{ProfileInput 
               title="Имя" 
               name="first_name" 
               value=first_name
+              validate="name"
             }}}
             {{{ProfileInput 
               title="Фамилия" 
               name="second_name" 
               value=second_name
+              validate="name"
             }}}
             {{{ProfileInput 
               title="Имя в чате" 
@@ -48,6 +52,7 @@ export class ProfileEditDataPage extends Block {
               title="Телефон" 
               name="phone" 
               value=phone
+              validate="phone"
             }}}
           {{/Form}}
         {{/ProfileContainerBlock}}

@@ -28,7 +28,7 @@ export class AuthPage extends Block {
                 title="Логин" 
                 name="login" 
                 value=login 
-                errorMessage="Неверный логин"
+                validate="login"
               }}}
 							{{{Input 
                 ref="password" 

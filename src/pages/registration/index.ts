@@ -26,45 +26,49 @@ export class RegistrationPage extends Block {
                 name="email" 
                 type="text" 
                 value=email
+                validate="email"
               }}}
               {{{Input 
                 title="Логин" 
                 name="login" 
                 type="text" 
                 value=login
+                validate="login"
               }}}
               {{{Input 
                 title="Имя" 
                 name="first_name" 
                 type="text" 
                 value=first_name
+                validate="name"
               }}}
               {{{Input 
                 title="Фамилия" 
                 name="second_name" 
                 type="text" 
                 value=second_name
+                validate="name"
               }}}
               {{{Input 
                 title="Телефон" 
                 name="phone" 
                 type="text" 
                 value=phone
+                validate="phone"
               }}}
               {{{Input 
                 title="Пароль" 
                 name="password" 
                 type="password" 
                 value=password 
-                error="true"
+                validate="password"
               }}}
               {{{Input 
                 title="Пароль (еще раз)" 
                 name="password_repeat" 
                 type="password" 
                 value=password_repeat 
-                error="true"
-                errorMessage="Неверный логин"
+                validate="password"
               }}}
             {{/Form}}
           {{/CardContent}}

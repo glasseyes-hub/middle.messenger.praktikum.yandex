@@ -2,7 +2,7 @@ import {Block} from '../../utils/Block';
 import './index.scss'
 import  '../../utils/validate'
 import { validate } from '../../utils/validate';
-import {INCORRECT_PASSWORD} from '../../constant/errors'
+import {VALIDATE_ERRORS} from '../../constant/errors'
 
 
 type Props = {
@@ -10,8 +10,6 @@ type Props = {
   type: string,
   name: string,
   value: string,
-  error: boolean,
-  errorMessage: string
   validate?: string
 }
 
@@ -31,7 +29,7 @@ export class InputComponent extends Block {
           }
 
           if(props.validate && !validate(props.validate, input.value)) {
-            this.refs.error.setProps({show: true, text: INCORRECT_PASSWORD})
+            this.refs.error.setProps({show: true, text: VALIDATE_ERRORS[props.validate]})
             this.isError = true
           }
         }
