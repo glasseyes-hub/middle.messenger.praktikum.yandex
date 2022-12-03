@@ -9,6 +9,8 @@ type Props = {
 type Children = Record<string, Block>
 type ElementEvents = Record<string, () => void>
 
+const HTMLEvents = ['click', 'focus', 'blur', 'input']
+
 export class Block {
   static EVENTS = {
     INIT: 'init',
@@ -16,15 +18,12 @@ export class Block {
     FLOW_CDU: 'flow:component-did-update',
     FLOW_RENDER: 'flow:render',
   };
-
-  private HTMLEvents = ['click', 'focus', 'blur']
-
-  private _element: HTMLElement | null = null;
   private eventBus: () => EventBus;
   
   protected props: Props;
   protected children: Children;
   protected refs: Record<string, Block> = {};
+  protected element: HTMLElement | null = null;
 
   public static componentName?: string;
   public id = uuidv4();
@@ -85,7 +84,7 @@ export class Block {
     eventBus.on(Block.EVENTS.FLOW_RENDER, this._render.bind(this));
   }
 
- private _init() {
+  private _init() {
     this.eventBus().emit(Block.EVENTS.FLOW_RENDER);
   }
 
@@ -117,12 +116,12 @@ export class Block {
     const fragment = this.compile(templateString, { ...this.props });
     const newElement = fragment.firstElementChild as HTMLElement;
 
-    if (this._element) {
+    if (this.element) {
       this._removeEvents();
-      this._element.replaceWith(newElement);
+      this.element.replaceWith(newElement);
     }
 
-    this._element = newElement;
+    this.element = newElement;
 
     this._addEvents();
   }
@@ -162,7 +161,7 @@ export class Block {
   }
 
   public getContent(): HTMLElement | null {
-    return this._element;
+    return this.element;
   }
 
   private _makePropsProxy(props: Props) { 
@@ -197,8 +196,18 @@ export class Block {
       return;
     }
 
-    this.HTMLEvents.forEach(event => {
-      const elements = this._element?.querySelectorAll(`[${event}]`)
+    HTMLEvents.forEach(event => {
+      let elements: Element[] = []
+
+      if(this.element?.hasAttribute(event)) {
+        elements.push(this.element)
+      }
+
+      const innerElements = this.element?.querySelectorAll(`[${event}]`)
+
+      if(innerElements) {
+        elements = [...elements, ...innerElements]
+      }
 
       if(elements) {
         elements.forEach(el => {
@@ -219,8 +228,8 @@ export class Block {
       return;
     }
     
-    this.HTMLEvents.forEach(event => {
-      const elements = this._element?.querySelectorAll(`[${event}]`)
+    HTMLEvents.forEach(event => {
+      const elements = this.element?.querySelectorAll(`[${event}]`)
 
       if(elements) {
         elements.forEach(el => {
