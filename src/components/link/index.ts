@@ -1,25 +1,33 @@
 import {Block} from '../../utils/Block';
 import './index.scss'
+import {router} from '../../router'
 
 
 type Props = {
   color: string,
-  href: string,
+  to: string,
   title: string
 }
 
 export class LinkComponent extends Block {
   constructor(props: Props) {
-    super(props);
+    super({
+      ...props,
+      events: {
+        onClick: () => {
+          router.push(props.to)
+        }
+      }
+    });
   }
 
   render() {
     // language=hbs
     return `
-    <a 
+    <div 
       class="link" 
       {{#if color}}style="color: {{color}} !important;"{{/if}} 
-      href="{{href}}"
+      click=onClick
     >
       <span class="link__title">
         {{title}}
@@ -27,7 +35,7 @@ export class LinkComponent extends Block {
       <div class="link__icon">
         <slot></slot>
       </div>
-    </a>
+    </div>
 
     `
   }

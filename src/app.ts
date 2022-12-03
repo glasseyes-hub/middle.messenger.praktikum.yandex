@@ -9,6 +9,7 @@ import {CardContentComponent} from './components/card/content'
 import {CardControlsComponent} from './components/card/controls'
 import {FormComponent} from './components/form'
 import {InputComponent} from './components/input'
+import {InputLabeledComponent} from './components/input/labeled'
 import {InputRoundedComponent} from './components/input/rounded'
 import {InputFileComponent} from './components/input/file'
 import {InputErrorComponent} from './components/input/error'
@@ -37,6 +38,7 @@ registerComponent('CardContent', CardContentComponent)
 registerComponent('CardControls', CardControlsComponent)
 registerComponent('Form', FormComponent)
 registerComponent('Input', InputComponent)
+registerComponent('InputLabeled', InputLabeledComponent)
 registerComponent('InputRounded', InputRoundedComponent)
 registerComponent('InputFile', InputFileComponent)
 registerComponent('InputError', InputErrorComponent)

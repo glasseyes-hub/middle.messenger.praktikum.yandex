@@ -1,19 +1,39 @@
 import {Block} from '../../utils/Block';
-
+import {InputLabeledComponent} from '../../components/input/labeled'
 
 export class AuthPage extends Block {
+  login:string
+  password:string
+
   constructor() {
 		super({
-			login:"ivanivanov",
-			password: "1234567890",
-      // checkPassword: (value: string) => {
-      //   if(validatePassword(value)) {
-      //     console.log(value)
-      //   } else {
-      //     this.refs.password.setProps({value, error: true, errorMessage: 'Error'})
-      //   }
+      onSubmit: () => {
+        let isFormValid = true;
 
-      // }
+        for(const inputLabeled of Object.values(this.refs)) {
+          const input = inputLabeled as InputLabeledComponent
+
+          input.validate()
+
+          if(!input.isValid) {
+            isFormValid = false
+          }
+        }
+
+        if(isFormValid) {
+          console.log({
+            login: this.login,
+            password: this.password
+          })
+
+        }
+      },
+      onLoginChange: (login: string) => {
+        this.login = login
+      },
+      onPasswordChange: (password: string) => {
+        this.password = password
+      }
 		})
 	}
 
@@ -23,27 +43,28 @@ export class AuthPage extends Block {
 			{{#Page centered="true"}}
 				{{#Card title="Вход"}}
 					{{#CardContent}}
-						{{#Form id="auth" method="post" }}
-							{{{Input 
+						{{#Form}}
+							{{{InputLabeled 
+                ref="login" 
                 title="Логин" 
                 name="login" 
-                value=login 
                 validate="login"
+                onInput=onLoginChange
               }}}
-							{{{Input 
+							{{{InputLabeled 
                 ref="password" 
                 title="Пароль" 
                 type="password" 
                 name="password" 
-                value=password 
                 validate="password"
+                onInput=onPasswordChange
               }}}
 						{{/Form}}
 					{{/CardContent}}
 			
 					{{#CardControls}}
-						{{{ButtonSubmit title="Авторизоваться" form="auth" }}}
-						{{{Link title="Нет аккаунта?" href="/registration" }}}
+						{{{ButtonSubmit title="Авторизоваться" onClick=onSubmit }}}
+						{{{Link title="Нет аккаунта?" to="/registration" }}}
 					{{/CardControls}}
 				{{/Card}}
 			{{/Page}}

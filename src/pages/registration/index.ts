@@ -1,16 +1,74 @@
 import {Block} from '../../utils/Block';
+import {InputLabeledComponent} from '../../components/input/labeled'
 
 
 export class RegistrationPage extends Block {
+  email: string
+  login: string
+  first_name: string
+  second_name: string
+  phone: string
+  password: string
+  password_repeat: string
+
   constructor() {
 		super({
-			email:"email@email.ru",
-			login:"ivanivanov",
-			first_name: "Ivan",
-			second_name: "Ivanov",
-			phone: "1234567890",
-			password: "1234567890",
-			password_repeat: "1234567890",
+      onSubmit: () => {
+        let passwordsIsSame = true;
+        let isFormValid = true;
+
+        for(const [name, block] of Object.entries(this.refs)) {
+          const input = block as InputLabeledComponent
+
+          input.validate()
+
+          if(name === 'password') {
+            passwordsIsSame = input.compareValue(this.password_repeat)
+          }
+
+          if(name === 'password_repeat') {
+            passwordsIsSame = input.compareValue(this.password)
+          }
+
+
+          if(!input.isValid || !passwordsIsSame) {
+            isFormValid = false
+          }
+        }
+
+        if(isFormValid) {
+          console.log({
+            email: this.email,
+            login: this.login,
+            first_name: this.first_name,
+            second_name: this.second_name,
+            phone: this.phone,
+            password: this.password,
+            password_repeat: this.password_repeat
+          })
+        }
+      },
+      onEmailChange: (email: string) => {
+        this.email = email
+      },
+      onLoginChange: (login: string) => {
+        this.login = login
+      },
+      onFirstNameChange: (first_name: string) => {
+        this.first_name = first_name
+      },
+      onSecondNameChange: (second_name: string) => {
+        this.second_name = second_name
+      },
+      onPhoneChange: (phone: string) => {
+        this.phone = phone
+      },
+      onPasswordChange: (password: string) => {
+        this.password = password
+      },
+      onPasswordRepeatChange: (password_repeat: string) => {
+        this.password_repeat = password_repeat
+      }
 		})
 	}
 
@@ -21,65 +79,71 @@ export class RegistrationPage extends Block {
         {{#Card title="Регистрация"}}
           {{#CardContent}}
             {{#Form id="registration" method="post"}}
-              {{{Input 
+              {{{InputLabeled 
+                ref="email" 
                 title="Почта" 
                 name="email" 
                 type="text" 
-                value=email
                 validate="email"
+                onInput=onEmailChange
               }}}
-              {{{Input 
+              {{{InputLabeled 
+                ref="login" 
                 title="Логин" 
                 name="login" 
                 type="text" 
-                value=login
                 validate="login"
+                onInput=onLoginChange
               }}}
-              {{{Input 
+              {{{InputLabeled 
+                ref="first_name" 
                 title="Имя" 
                 name="first_name" 
                 type="text" 
-                value=first_name
                 validate="name"
+                onInput=onFirstNameChange
               }}}
-              {{{Input 
+              {{{InputLabeled 
+                ref="second_name" 
                 title="Фамилия" 
                 name="second_name" 
                 type="text" 
-                value=second_name
                 validate="name"
+                onInput=onSecondNameChange
               }}}
-              {{{Input 
+              {{{InputLabeled 
+                ref="phone" 
                 title="Телефон" 
                 name="phone" 
                 type="text" 
-                value=phone
                 validate="phone"
+                onInput=onPhoneChange
               }}}
-              {{{Input 
+              {{{InputLabeled 
+                ref="password" 
                 title="Пароль" 
                 name="password" 
                 type="password" 
-                value=password 
                 validate="password"
+                onInput=onPasswordChange
               }}}
-              {{{Input 
+              {{{InputLabeled 
+                ref="password_repeat" 
                 title="Пароль (еще раз)" 
                 name="password_repeat" 
                 type="password" 
-                value=password_repeat 
                 validate="password"
+                onInput=onPasswordRepeatChange
               }}}
             {{/Form}}
           {{/CardContent}}
       
           {{#CardControls}}
             {{{ButtonSubmit 
-              form="registration" 
               title="Зарегистрироваться"
-              href="/"
+              onClick=onSubmit
             }}}
-            {{{Link title="Войти" href="/auth" }}}
+            {{{Link title="Войти" to="/auth" }}}
           {{/CardControls}}
         {{/Card}}
       {{/Page}}

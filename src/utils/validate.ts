@@ -1,3 +1,4 @@
+import * as errors from '../constants/errors'
 
 type Validator = (value: string) => boolean;
 
@@ -13,3 +14,12 @@ const validators: {[type: string]: Validator} = {
 export function validate(type: string, value: string) {
     return validators[type](value)
 } 
+
+export const VALIDATE_ERRORS: Record<string, string> = {
+    'name': errors.INCORRECT_NAME,
+    'login': errors.INCORRECT_LOGIN,
+    'password': errors.INCORRECT_PASSWORD,
+    'email': errors.INCORRECT_EMAIL,
+    'phone': errors.INCORRECT_PHONE,
+    'message': errors.INCORRECT_MESSAGE,
+}
