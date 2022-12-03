@@ -21,10 +21,19 @@ const routes: Routes = {
   '/profile/edit/password': ProfileEditPasswordPage,
 }
 
+window.addEventListener('popstate', function() {
+  const route = window.location.pathname
+
+  const pageRoute = route in routes ? route : '/404'
+
+  render(new routes[pageRoute]())
+});
 
 const router = {
   push(route: string) {
     const pageRoute = route in routes ? route : '/404'
+
+    history.pushState({}, '', route)
 
     render(new routes[pageRoute]())
   },
