@@ -16,7 +16,7 @@ export class ProfileContainerComponent extends Block {
     // language=hbs
     return `
       {{#Page}}
-        {{{Sidebar href=backLink}}}
+        {{{Sidebar to=backLink}}}
         <div class="profile">
           <header class="profile__header">
             {{{Avatar image=image}}}

@@ -2,7 +2,7 @@ import {Block} from '../../../utils/Block';
 
 type Props = {
   title: string,
-  href: string,
+  to: string,
   color: string,
 }
 
@@ -17,7 +17,7 @@ export class ProfileLinkComponent extends Block {
       {{#ProfileLine}}
         {{{Link 
           title=title 
-          href=href 
+          to=to 
           color=color
         }}}
       {{/ProfileLine}}

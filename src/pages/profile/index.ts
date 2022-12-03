@@ -82,15 +82,15 @@ export class ProfilePage extends Block {
         {{#ProfileContainerBlock}}
           {{{ProfileLink 
             title="Изменить данные" 
-            href="/profile/edit/data"
+            to="/profile/edit/data"
           }}}
           {{{ProfileLink 
             title="Изменить пароль" 
-            href="/profile/edit/password"
+            to="/profile/edit/password"
           }}}
           {{{ProfileLink 
             title="Выйти" 
-            href="/logout" 
+            to="/logout" 
             color="#FF0000"
           }}}
         {{/ProfileContainerBlock}}

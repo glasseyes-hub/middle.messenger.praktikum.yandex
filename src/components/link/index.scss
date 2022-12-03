@@ -10,6 +10,11 @@
   font-size: 13px;
   text-decoration: none;
   transition: $transition-duration;
+  cursor: pointer;
+
+  &:hover {
+    opacity: $hover-opacity;
+  }
 }
 
 .link__icon {

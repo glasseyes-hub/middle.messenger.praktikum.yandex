@@ -1,18 +1,28 @@
 import {Block} from '../../../utils/Block';
 import './index.scss'
+import {router} from '../../../router'
 
 
 type Props = {
-  href: string,
+  to: string,
 }
 
 export class ButtonRoundedComponent extends Block {
   constructor(props: Props) {
-    super(props);
+    super({
+      ...props,
+      events: {
+        onClick: () => {
+          if(props.to) {
+            router.push(props.to)
+          }
+        }
+      }
+    });
   }
 
   render() {
     // language=hbs
-    return `<a class="button_rounded" href="{{href}}"></a>`
+    return `<div class="button_rounded" click=onClick></div>`
   }
 }
