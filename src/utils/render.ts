@@ -7,6 +7,7 @@ export function render(block: Block) {
     if(!root) {
         return
     }
-
+    
+    root.innerHTML = ''
     root.append(block.getContent() as Node)
 }
