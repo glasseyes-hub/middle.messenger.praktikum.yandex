@@ -39,7 +39,7 @@ export class ChatItemComponent extends Block {
 
         <div class="chat-item {{#if selected}} chat-item_selected {{/if}}">
           <div>
-            {{{AvatarSimple avatar="{{avatar}}"}}}
+            {{{Avatar avatar="{{avatar}}"}}}
           </div>
           <div class="chat-item__content">
             <span class="chat-item__name">{{name}}</span>

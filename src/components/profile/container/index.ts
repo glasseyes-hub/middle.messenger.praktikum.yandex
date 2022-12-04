@@ -19,7 +19,7 @@ export class ProfileContainerComponent extends Block {
         {{{Sidebar to=backLink}}}
         <div class="profile">
           <header class="profile__header">
-            {{{Avatar image=image}}}
+            {{{ProfileAvatar image=image}}}
             <h1 class="profile__header__title">{{displayName}}</h1>
           </header>
       

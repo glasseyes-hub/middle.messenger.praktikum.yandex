@@ -212,7 +212,7 @@ export class MainPage extends Block {
         <div class="chat-content">
           <header class="chat-content__header">
             <div class="chat-content__info">
-              {{{AvatarSimple size="small"}}}
+              {{{Avatar size="small"}}}
               <span class="chat-content__info__title">{{title}}</span>
             </div>
 

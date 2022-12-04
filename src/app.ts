@@ -18,13 +18,13 @@ import {ButtonSumbitComponent} from './components/button/submit'
 import {ButtonRoundedComponent} from './components/button/rounded'
 import {LinkComponent} from './components/link'
 import {AvatarComponent} from './components/avatar'
-import {AvatarSimpleComponent} from './components/avatar/simple'
 import {SidebarComponent} from './components/sidebar'
 import {ProfileContainerComponent} from './components/profile/container'
 import {ProfileContainerBlockComponent} from './components/profile/container/block'
 import {ProfileLineComponent} from './components/profile/line'
 import {ProfileInputComponent} from './components/profile/input'
 import {ProfileLinkComponent} from './components/profile/link'
+import {ProfileAvatarComponent} from './components/profile/avatar'
 import {ModalComponent} from './components/modal'
 import {ChatItemComponent} from './components/chat/item'
 import {ChatMessageComponent} from './components/chat/message'
@@ -48,13 +48,13 @@ registerComponent('ButtonSubmit', ButtonSumbitComponent)
 registerComponent('ButtonRounded', ButtonRoundedComponent)
 registerComponent('Link', LinkComponent)
 registerComponent('Avatar', AvatarComponent)
-registerComponent('AvatarSimple', AvatarSimpleComponent)
 registerComponent('Sidebar', SidebarComponent)
 registerComponent('ProfileContainer', ProfileContainerComponent)
 registerComponent('ProfileContainerBlock', ProfileContainerBlockComponent)
 registerComponent('ProfileLine', ProfileLineComponent)
 registerComponent('ProfileInput', ProfileInputComponent)
 registerComponent('ProfileLink', ProfileLinkComponent)
+registerComponent('ProfileAvatar', ProfileAvatarComponent)
 registerComponent('Modal', ModalComponent)
 registerComponent('ChatItem', ChatItemComponent)
 registerComponent('ChatMessage', ChatMessageComponent)
