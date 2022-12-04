@@ -67,9 +67,7 @@ registerComponent('ChatDropdownBottom', ChatDropdownBottomComponent)
 registerComponent('ChatDropdownItem', ChatDropdownItemComponent)
 
 document.addEventListener('DOMContentLoaded', () => {   
-    let query = window.location.href.split('?')[1]
-
-    query = query ? `?${query}` : ''
+    const query = '?' + window.location.href.split('?')[1]
 
     router.push(window.location.pathname + query)
 })
