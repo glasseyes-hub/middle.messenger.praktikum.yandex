@@ -1,7 +1,15 @@
 import {Block} from '../../../../utils/Block';
+import {ProfileInputComponent} from '../../../../components/profile/input'
 
 
 export class ProfileEditDataPage extends Block {
+  email: string
+  login: string
+  first_name:  string
+  second_name:  string
+  display_name: string
+  phone: string
+
   constructor() {
 		super({
       email: "pochta@yandex.ru", 
@@ -10,6 +18,45 @@ export class ProfileEditDataPage extends Block {
       second_name: "Иванов", 
       display_name: 'Иван', 
       phone: '+7 (909) 967 30 30', 
+      onSubmit: () => {
+        let isFormValid = true;
+
+        for(const InputLabeled of Object.values(this.refs)) {
+          const input = InputLabeled as ProfileInputComponent
+
+          input.validate()
+
+
+          if(!input.isValid) {
+            isFormValid = false
+          }
+        }
+
+        if(isFormValid) {
+          console.log({
+            email: this.email ?? this.props.email,
+            login: this.login ?? this.props.login,
+            first_name: this.first_name ?? this.props.first_name,
+            second_name: this.second_name ?? this.props.second_name,
+            phone: this.phone ?? this.props.phone,
+          })
+        }
+      },
+      onEmailChange: (email: string) => {
+        this.email = email
+      },
+      onLoginChange: (login: string) => {
+        this.login = login
+      },
+      onFirstNameChange: (first_name: string) => {
+        this.first_name = first_name
+      },
+      onSecondNameChange: (second_name: string) => {
+        this.second_name = second_name
+      },
+      onPhoneChange: (phone: string) => {
+        this.phone = phone
+      },
 		})
 	}
 
@@ -17,47 +64,60 @@ export class ProfileEditDataPage extends Block {
     // language=hbs
     return `
       {{#ProfileContainer displayName=display_name backLink="/profile" }}
-        {{#ProfileContainerBlock}}
-          {{#Form id="editData" method="post"}}
+        {{#Form }}
+          {{#ProfileContainerBlock}}
             {{{ProfileInput 
+              ref="email"
               title="Почта" 
               name="email" 
               value=email
               validate="email"
+              onInput=onEmailChange
             }}}
             {{{ProfileInput 
+              ref="login"
               title="Логин" 
               name="login" 
               value=login
               validate="login"
+              onInput=onLoginChange
             }}}
             {{{ProfileInput 
+              ref="first_name"
               title="Имя" 
               name="first_name" 
               value=first_name
               validate="name"
+              onInput=onFirstNameChange
             }}}
             {{{ProfileInput 
+              ref="second_name"
               title="Фамилия" 
               name="second_name" 
               value=second_name
               validate="name"
+              onInput=onSecondNameChange
             }}}
             {{{ProfileInput 
+              ref="display_name"
               title="Имя в чате" 
               name="display_name" 
               value=display_name
+              validate="name"
+              onInput=onDisplayNameChange
             }}}
             {{{ProfileInput 
+              ref="phone"
               title="Телефон" 
               name="phone" 
               value=phone
               validate="phone"
+              onInput=onPhoneChange
             }}}
+            {{/ProfileContainerBlock}}
           {{/Form}}
-        {{/ProfileContainerBlock}}
 
-        {{{ButtonSubmit title="Сохранить" form="editData"}}}
+        {{{ButtonSubmit title="Сохранить" onClick=onSubmit}}}
       {{/ProfileContainer}}
     `
   }

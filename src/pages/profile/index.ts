@@ -71,7 +71,7 @@ export class ProfilePage extends Block {
             value=display_name 
             disabled=true
           }}}
-          {{{PprofileInput 
+          {{{ProfileInput 
             title="Телефон"
             name="phone" 
             value=phone 

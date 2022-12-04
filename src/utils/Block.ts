@@ -116,6 +116,10 @@ export class Block {
     const fragment = this.compile(templateString, { ...this.props });
     const newElement = fragment.firstElementChild as HTMLElement;
 
+    if('class' in this.props) {
+      newElement.classList.add(this.props.class as string)
+    }
+
     if (this.element) {
       this._removeEvents();
       this.element.replaceWith(newElement);

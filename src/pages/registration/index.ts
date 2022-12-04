@@ -17,8 +17,8 @@ export class RegistrationPage extends Block {
         let passwordsIsSame = true;
         let isFormValid = true;
 
-        for(const [name, block] of Object.entries(this.refs)) {
-          const input = block as InputLabeledComponent
+        for(const [name, InputLabeled] of Object.entries(this.refs)) {
+          const input = InputLabeled as InputLabeledComponent
 
           input.validate()
 

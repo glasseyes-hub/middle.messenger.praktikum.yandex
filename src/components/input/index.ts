@@ -79,6 +79,7 @@ export class InputComponent extends Block {
         name="{{name}}"
         value="{{value}}"
         placeholder="{{title}}"
+        {{#if disabled}}disabled{{/if}}
         focus=validate
         blur=validate
         input=onInput

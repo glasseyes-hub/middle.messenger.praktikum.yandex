@@ -1,33 +1,34 @@
-import {Block} from '../../../utils/Block';
+// import {Block} from '../../../utils/Block';
+import {InputLabeledComponent} from '../../../components/input/labeled'
 import './index.scss'
 
-type Props = {
-  title: string,
-  name: string,
-  type: string,
-  value: string,
-  disabled: boolean,
-}
-
-export class ProfileInputComponent extends Block {
-  constructor(props: Props) {
-    super(props);
+export class ProfileInputComponent extends InputLabeledComponent {
+  get isValid() {
+    return (this.refs.inputLabeled as InputLabeledComponent).isValid
   }
+
+  validate() {
+    (this.refs.inputLabeled as InputLabeledComponent).validate()
+  }
+
+  compareValue(value: string) {
+    return (this.refs.inputLabeled as InputLabeledComponent).compareValue(value)
+   }
 
   render() {
     // language=hbs
     return `
-      {{#ProfileLine}}
-        <h3>{{title}}</h3>
-        <input 
-          class="profile__input" 
-          name="{{name}}" 
-          type="{{type}}" 
-          value="{{value}}" 
-          {{#if disabled}}disabled{{/if}} 
-        />
-      {{/ProfileLine}}
-    
+      {{{InputLabeled
+        ref="inputLabeled"
+        class="profile__input" 
+        title=title
+        name=name 
+        type=type
+        value=value
+        validate=validate
+        disabled=disabled
+        onInput=onInput
+      }}}
     `
   }
 }

@@ -9,7 +9,8 @@ type Props = {
   type: string,
   name: string,
   value: string,
-  validate?: string
+  validate: string
+  disabled: boolean
   onInput?(value: string):void
 }
 
@@ -54,6 +55,7 @@ export class InputLabeledComponent extends Block {
           validate=validate
           onValidate=onValidate
           onInput=onInput
+          disabled=disabled
         }}}
         {{{InputError ref="error"}}}
       </label>
