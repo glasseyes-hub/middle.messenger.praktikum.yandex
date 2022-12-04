@@ -25,30 +25,29 @@ const routes: Routes = {
 window.addEventListener('popstate', function() {
   const route = window.location.pathname
 
+  renderPage(route)
+});
+
+const router = {
+  push(route: string) {
+    history.pushState({}, '', route)
+ 
+    renderPage(route)
+  },
+  error(code: number) {
+    render(new ErrorPage({code}))
+  }
+}
+
+function renderPage(route: string) {
+  history.pushState({}, '', route)
+
   const pageRoute = route in routes ? route : '/404'
 
   if(pageRoute == '/404') {
     render(new routes[pageRoute]({code: 404}))
   } else {
     render(new routes[pageRoute]())
-  }
-
-});
-
-const router = {
-  push(route: string) {
-    history.pushState({}, '', route)
-
-    const pageRoute = route in routes ? route : '/404'
-
-    if(pageRoute == '/404') {
-      render(new routes[pageRoute]({code: 404}))
-    } else {
-      render(new routes[pageRoute]())
-    }
-  },
-  error(code: number) {
-    render(new ErrorPage({code}))
   }
 }
 
