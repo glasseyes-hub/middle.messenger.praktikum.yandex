@@ -1,4 +1,3 @@
-@import "./assets/styles/colors.scss";
 
 * {
   box-sizing: border-box;
@@ -10,5 +9,5 @@
 body {
   font-family: "Inter", serif;
   font-size: 13px;
-  color: $black;
+  color: #000;
 }
