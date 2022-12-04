@@ -40,8 +40,6 @@ const router = {
 }
 
 function renderPage(route: string) {
-  history.pushState({}, '', route)
-
   const pageRoute = route in routes ? route : '/404'
 
   if(pageRoute == '/404') {
