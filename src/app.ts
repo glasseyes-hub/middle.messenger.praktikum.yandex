@@ -28,6 +28,8 @@ import {ProfileAvatarComponent} from './components/profile/avatar'
 import {ModalComponent} from './components/modal'
 import {ChatItemComponent} from './components/chat/item'
 import {ChatMessageComponent} from './components/chat/message'
+import {ChatContentComponent} from './components/chat/content'
+import {ChatSidebarComponent} from './components/chat/sidebar'
 import {ChatDropdownTopComponent} from './components/chat/dropdown/dropdownTop'
 import {ChatDropdownBottomComponent} from './components/chat/dropdown/dropdownBottom'
 import {ChatDropdownItemComponent} from './components/chat/dropdown/item'
@@ -58,6 +60,8 @@ registerComponent('ProfileAvatar', ProfileAvatarComponent)
 registerComponent('Modal', ModalComponent)
 registerComponent('ChatItem', ChatItemComponent)
 registerComponent('ChatMessage', ChatMessageComponent)
+registerComponent('ChatContent', ChatContentComponent)
+registerComponent('ChatSidebar', ChatSidebarComponent)
 registerComponent('ChatDropdownTop', ChatDropdownTopComponent)
 registerComponent('ChatDropdownBottom', ChatDropdownBottomComponent)
 registerComponent('ChatDropdownItem', ChatDropdownItemComponent)

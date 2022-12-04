@@ -64,14 +64,6 @@ export class Block {
       } else {
         props[key] = value;
       }
-
-      // if (value instanceof Block) {
-      //   children[key] = value;
-      // } else if (Array.isArray(value) && value.every((v) => (v instanceof Block))) {
-      //   children[key] = value;
-      // } else {
-      //   props[key] = value;
-      // }
     });
 
     return { props, children };
@@ -92,8 +84,8 @@ export class Block {
     this.componentDidMount();
   }
 
-  private _componentDidUpdate(oldProps: Props, newProps: Props) {
-    this.componentDidUpdate(oldProps, newProps)
+  private _componentDidUpdate() {
+    this.componentDidUpdate()
 
     this.eventBus().emit(Block.EVENTS.FLOW_RENDER);
   }
@@ -106,8 +98,8 @@ export class Block {
     return
   }
 
-  protected componentDidUpdate(oldProps: Props, newProps: Props) {
-    return {oldProps, newProps}
+  protected componentDidUpdate() {
+    return 
   }
 
 
@@ -128,6 +120,8 @@ export class Block {
     this.element = newElement;
 
     this._addEvents();
+
+    this._componentDidMount()
   }
 
   protected compile(templateString: string, context: object) {

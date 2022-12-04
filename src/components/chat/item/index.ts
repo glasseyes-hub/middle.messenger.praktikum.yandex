@@ -3,12 +3,14 @@ import './index.scss'
 
 
 type Props = {
+  id: number,
   title: string,
   type: string,
   name: string,
   value: string,
   error: boolean,
   errorMessage: string
+  onClick?(id: number): void
 }
 
 export class ChatItemComponent extends Block {
@@ -16,17 +18,10 @@ export class ChatItemComponent extends Block {
     super({
       ...props,
       events: {
-        onInputClick() {
-          console.log('input click')
+        onClick()  {
+          if(props.onClick) props.onClick(props.id)
         },
-        ontitleClick() {
-          console.log('title click')
-        },
-        onInputBlur(event: Event) {
-          console.log('input blur', event)
-        }
       }
-
     });
 
   }
@@ -34,7 +29,7 @@ export class ChatItemComponent extends Block {
   render() {
     // language=hbs
     return `
-      <div class="chat-item__container">
+      <div class="chat-item__container" click=onClick>
         <div clas="chat-item__border"></div>
 
         <div class="chat-item {{#if selected}} chat-item_selected {{/if}}">

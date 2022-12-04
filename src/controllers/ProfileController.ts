@@ -1,25 +1,5 @@
-type ProfileData = {
-    email: string
-    login: string
-    first_name: string
-    second_name: string
-    display_name: string
-    phone: string
-}
-
-type PasswordChangeData = {
-  password:string
-  password_new:string
-  password_new_repeat:string
-}
-
-type AvatarChangeData = {
-  file:File
-}
-
-
 export class ProfileController {
-  static get(): ProfileData {
+  static get(): UserData {
     const data = {
       email: "pochta@yandex.ru", 
       login: "ivanivanov", 
@@ -32,15 +12,15 @@ export class ProfileController {
     return data
   }
 
-  static update(data: ProfileData) {
+  static update(data: UserData) {
     console.log(data)
   }
 
-  static changePassword(data: PasswordChangeData) {
+  static changePassword(data: UserPasswordChangeData) {
     console.log(data)
   }
 
-  static changeAvatar(data: AvatarChangeData) {
+  static changeAvatar(data: UserAvatarChangeData) {
     console.log(data)
   }
 }

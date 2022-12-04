@@ -18,6 +18,8 @@
   height: 71px;
   margin: 2px -10px;
   padding: 12px 10px;
+  cursor: pointer;
+  transition: $transition-duration;
 
   &_selected {
     background-color: #e4edfd;
