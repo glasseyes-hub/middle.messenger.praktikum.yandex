@@ -30,9 +30,9 @@ window.addEventListener('popstate', function() {
 
 const router = {
   push(route: string) {
-    history.pushState({}, '', route)
+    history.pushState('', '', route)
  
-    renderPage(route)
+    renderPage(route.split("?")[0])
   },
   error(code: number) {
     render(new ErrorPage({code}))
