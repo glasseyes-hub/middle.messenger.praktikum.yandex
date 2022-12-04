@@ -93,7 +93,7 @@ export class ChatContentComponent extends Block {
         <footer class="chat-content__footer">
           {{{ChatDropdownBottom}}}
 
-          {{{InputRounded ref="messageInput" title="Сообщение" onInput=onMessageInput}}}
+          {{{InputRounded ref="messageInput" name="message" title="Сообщение" onInput=onMessageInput}}}
 
           <div>
             {{#ButtonRounded onClick=onMessageSubmit}}
