@@ -3,7 +3,7 @@ import './index.scss'
 
 
 type Props = {
-  code: string
+  code: number
 }
 
 export class ErrorPage extends Block {
@@ -21,7 +21,7 @@ export class ErrorPage extends Block {
             <span class="error-message__text">Мы уже фиксим</span>
           </header>
       
-          {{{Link title="Назад к чатам" href="/" }}}
+          {{{Link title="Назад к чатам" to="/" }}}
         </div>
       {{/Page}}
     `

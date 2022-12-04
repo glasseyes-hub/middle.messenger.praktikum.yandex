@@ -19,6 +19,7 @@ const routes: Routes = {
   '/profile': ProfilePage,
   '/profile/edit/data': ProfileEditDataPage,
   '/profile/edit/password': ProfileEditPasswordPage,
+  '/404': ErrorPage,
 }
 
 window.addEventListener('popstate', function() {
@@ -26,18 +27,27 @@ window.addEventListener('popstate', function() {
 
   const pageRoute = route in routes ? route : '/404'
 
-  render(new routes[pageRoute]())
+  if(pageRoute == '/404') {
+    render(new routes[pageRoute]({code: 404}))
+  } else {
+    render(new routes[pageRoute]())
+  }
+
 });
 
 const router = {
   push(route: string) {
-    const pageRoute = route in routes ? route : '/404'
-
     history.pushState({}, '', route)
 
-    render(new routes[pageRoute]())
+    const pageRoute = route in routes ? route : '/404'
+
+    if(pageRoute == '/404') {
+      render(new routes[pageRoute]({code: 404}))
+    } else {
+      render(new routes[pageRoute]())
+    }
   },
-  error(code: string) {
+  error(code: number) {
     render(new ErrorPage({code}))
   }
 }
