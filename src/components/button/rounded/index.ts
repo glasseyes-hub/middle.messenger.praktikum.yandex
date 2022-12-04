@@ -1,6 +1,6 @@
 import {Block} from '../../../utils/Block';
 import './index.scss'
-import {router} from '../../../router'
+// import {router} from '../../../router'
 
 
 type Props = {
@@ -15,7 +15,7 @@ export class ButtonRoundedComponent extends Block {
       events: {
         onClick: () => {
           if(props.to) {
-            router.push(props.to)
+            // router.push(props.to)
           } else if(props.onClick) {
             props.onClick()
           }

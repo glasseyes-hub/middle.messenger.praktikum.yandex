@@ -23,9 +23,15 @@ const routes: Routes = {
 }
 
 window.addEventListener('popstate', function() {
-  const route = window.location.pathname
+  // event.preventDefault()
 
-  renderPage(route)
+  // // const w = event.target as Window
+
+  // console.log(event.target.location.href)
+
+
+
+  renderPage(window.location.pathname)
 });
 
 const router = {

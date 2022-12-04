@@ -1,6 +1,6 @@
 import {Block} from '../../utils/Block';
 import './index.scss'
-import {router} from '../../router'
+// import {router} from '../../router'
 
 
 type Props = {
@@ -15,7 +15,7 @@ export class LinkComponent extends Block {
       ...props,
       events: {
         onClick: () => {
-          router.push(props.to)
+          // router.push(props.to)
         }
       }
     });
