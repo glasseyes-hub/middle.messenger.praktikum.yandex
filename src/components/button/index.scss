@@ -1,0 +1,41 @@
+@import "../../assets/styles/colors.scss";
+@import "../../assets/styles/variables.scss";
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 32px;
+  width: 32px;
+  outline: none;
+  border: 0;
+  border-radius: 50%;
+  background-color: transparent;
+  cursor: pointer;
+  transition: $transition-duration;
+
+  svg path,
+  svg circle {
+    transition: $transition-duration;
+  }
+
+  &:hover {
+    svg path,
+    svg circle {
+      fill: $primary;
+    }
+  }
+
+  &_active {
+    background-color: $grey-lighten;
+
+    svg path,
+    svg circle {
+      fill: $primary;
+    }
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}

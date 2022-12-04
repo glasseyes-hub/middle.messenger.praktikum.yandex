@@ -1,36 +1,17 @@
 @import "../../assets/styles/variables.scss";
+@import "../../assets/styles/colors.scss";
 
 .avatar {
-  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 130px;
-  height: 130px;
-  background-color: #efefef;
+  width: 47px;
+  height: 47px;
+  background-color: $grey-lighten-2;
   border-radius: 50%;
-  cursor: pointer;
+}
 
-  &::after {
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 130px;
-    height: 130px;
-    border-radius: 50%;
-    content: "Поменять\Aаватар";
-    white-space: pre;
-    text-align: center;
-    color: white;
-    background: rgba(0, 0, 0, 0.5);
-    opacity: 0;
-    transition: $transition-duration;
-  }
-
-  &:hover {
-    &::after {
-      opacity: 1;
-    }
-  }
+.avatar_small {
+  width: 34px;
+  height: 34px;
 }

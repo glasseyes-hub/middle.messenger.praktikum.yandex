@@ -1,0 +1,81 @@
+@import "../../../assets/styles/colors.scss";
+@import "../../../assets/styles/variables.scss";
+
+.chat-message {
+  display: flex;
+  align-items: end;
+  gap: 4px;
+  background-color: $grey-lighten-3;
+  padding: 11px;
+  border-radius: 12px;
+  max-width: 400px;
+  border-top-left-radius: 0;
+
+  &_author {
+    background-color: #e4edfd;
+    border-bottom-right-radius: 0;
+    border-top-left-radius: 12px;
+
+    .chat-message__date {
+      color: $primary;
+    }
+  }
+}
+
+.chat-message__content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.chat-message__text {
+  font-size: 12px;
+  white-space: pre-line;
+}
+
+.chat-message__images__item {
+  display: flex;
+}
+
+.chat-message__images {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.chat-message__image {
+  width: 100%;
+}
+
+.chat-message__info {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+
+  &_readed {
+    .chat-message__info__status line {
+      opacity: 1;
+      stroke: $primary;
+    }
+  }
+
+  &_delivered {
+    .chat-message__info__status line {
+      opacity: 1;
+    }
+  }
+}
+
+.chat-message__info__status {
+  margin-top: 2px;
+  stroke: $grey;
+
+  & line {
+    opacity: 0;
+  }
+}
+
+.chat-message__date {
+  font-size: 9px;
+  color: $grey;
+}

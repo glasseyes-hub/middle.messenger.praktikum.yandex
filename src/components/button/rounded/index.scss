@@ -1,4 +1,5 @@
 @import "../../../assets/styles/colors.scss";
+@import "../../../assets/styles/variables.scss";
 
 .button_rounded {
   display: flex;
@@ -8,4 +9,10 @@
   width: 28px;
   height: 28px;
   border-radius: 50%;
+  cursor: pointer;
+  transition: $transition-duration;
+
+  &:hover {
+    opacity: $hover-opacity;
+  }
 }
