@@ -1,6 +1,7 @@
 import {Block} from '../../../../utils/Block';
 import './index.scss'
 import {InputLabeledComponent} from '../../../../components/input/labeled'
+import {ChatController} from '../../../../controllers/ChatController'
 
 
 type Props = {
@@ -36,7 +37,7 @@ export class ChatDropdownTopComponent extends Block {
         }
 
         if(isFormValid) {
-          console.log({
+          ChatController.addUserToChat({
             login: this.login
           })
 

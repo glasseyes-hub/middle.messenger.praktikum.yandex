@@ -1,5 +1,6 @@
 import {Block} from '../../../../utils/Block';
 import {ProfileInputComponent} from '../../../../components/profile/input'
+import {ProfileController} from '../../../../controllers/ProfileController'
 
 
 export class ProfileEditDataPage extends Block {
@@ -11,13 +12,10 @@ export class ProfileEditDataPage extends Block {
   phone: string
 
   constructor() {
+    const data = ProfileController.get()
+
 		super({
-      email: "pochta@yandex.ru", 
-      login: "ivanivanov", 
-      first_name: "Иван", 
-      second_name: "Иванов", 
-      display_name: 'Иван', 
-      phone: '+7 (909) 967 30 30', 
+      ...data,
       onSubmit: () => {
         let isFormValid = true;
 
@@ -33,11 +31,12 @@ export class ProfileEditDataPage extends Block {
         }
 
         if(isFormValid) {
-          console.log({
+          ProfileController.update({
             email: this.email ?? this.props.email,
             login: this.login ?? this.props.login,
             first_name: this.first_name ?? this.props.first_name,
             second_name: this.second_name ?? this.props.second_name,
+            display_name: this.display_name ?? this.props.display_name,
             phone: this.phone ?? this.props.phone,
           })
         }

@@ -1,5 +1,6 @@
 import {Block} from '../../utils/Block';
 import {InputLabeledComponent} from '../../components/input/labeled'
+import {AuthController} from '../../controllers/AuthController'
 
 export class AuthPage extends Block {
   login:string
@@ -21,11 +22,10 @@ export class AuthPage extends Block {
         }
 
         if(isFormValid) {
-          console.log({
+          AuthController.login({
             login: this.login,
             password: this.password
           })
-
         }
       },
       onLoginChange: (login: string) => {

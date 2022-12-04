@@ -1,5 +1,6 @@
 import {Block} from '../../utils/Block';
 import {InputLabeledComponent} from '../../components/input/labeled'
+import {AuthController} from '../../controllers/AuthController'
 
 
 export class RegistrationPage extends Block {
@@ -37,7 +38,7 @@ export class RegistrationPage extends Block {
         }
 
         if(isFormValid) {
-          console.log({
+          AuthController.registration({
             email: this.email,
             login: this.login,
             first_name: this.first_name,

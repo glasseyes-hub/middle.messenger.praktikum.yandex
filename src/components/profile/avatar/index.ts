@@ -1,5 +1,6 @@
 import {Block} from '../../../utils/Block';
 import './index.scss'
+import {ProfileController} from '../../../controllers/ProfileController'
 
 type Props = {
   avatar: string,
@@ -23,7 +24,7 @@ export class ProfileAvatarComponent extends Block {
       },
       onAvatarSubmit: () => {
         if(this.file) {
-          console.log({
+          ProfileController.changeAvatar({
             file: this.file
           })
           

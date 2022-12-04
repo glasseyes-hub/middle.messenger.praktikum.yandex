@@ -1,5 +1,6 @@
 import {Block} from '../../../../utils/Block';
 import {ProfileInputComponent} from '../../../../components/profile/input'
+import {ProfileController} from '../../../../controllers/ProfileController'
 
 
 export class ProfileEditPasswordPage extends Block {
@@ -38,7 +39,7 @@ export class ProfileEditPasswordPage extends Block {
         }
 
         if(isFormValid) {
-          console.log({
+          ProfileController.changePassword({
             password: this.password,
             password_new: this.password_new,
             password_new_repeat: this.password_new_repeat,
@@ -61,33 +62,33 @@ export class ProfileEditPasswordPage extends Block {
     // language=hbs
     return `
       {{#ProfileContainer displayName=display_name backLink="/profile" }}
-        {{#ProfileContainerBlock}}
-          {{#Form id="editPassword" method="post"}}
-            {{{ProfileInput 
-              title="Старый пароль" 
-              name="password" 
-              type="password" 
-              value=password
-              onInput=onPasswordChange
-            }}}
-            {{{ProfileInput 
-              ref="password_new"
-              title="Новый пароль" 
-              name="newPassword" 
-              type="password"
-              validate="password"
-              onInput=onPasswordNewChange
-            }}}
-            {{{ProfileInput 
-              ref="password_new_repeat"
-              title="Повторите новый пароль" 
-              name="newPasswordRepeat" 
-              type="password"
-              validate="password"
-              onInput=onPasswordNewRepeatChange
-            }}}
-          {{/Form}}
-        {{/ProfileContainerBlock}}
+        {{#Form}}
+          {{#ProfileContainerBlock}}
+              {{{ProfileInput 
+                title="Старый пароль" 
+                name="password" 
+                type="password" 
+                value=password
+                onInput=onPasswordChange
+              }}}
+              {{{ProfileInput 
+                ref="password_new"
+                title="Новый пароль" 
+                name="newPassword" 
+                type="password"
+                validate="password"
+                onInput=onPasswordNewChange
+              }}}
+              {{{ProfileInput 
+                ref="password_new_repeat"
+                title="Повторите новый пароль" 
+                name="newPasswordRepeat" 
+                type="password"
+                validate="password"
+                onInput=onPasswordNewRepeatChange
+              }}}
+          {{/ProfileContainerBlock}}
+        {{/Form}}
 
         {{{ButtonSubmit title="Сохранить" onClick=onSubmit}}}
       {{/ProfileContainer}}
