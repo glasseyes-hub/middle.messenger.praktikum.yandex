@@ -11,7 +11,7 @@ type Props = {
   errorMessage: string
 }
 
-export class ChatMenuItemComponent extends Block {
+export class ChatItemComponent extends Block {
   constructor(props: Props) {
     super({
       ...props,
@@ -34,31 +34,31 @@ export class ChatMenuItemComponent extends Block {
   render() {
     // language=hbs
     return `
-      <div class="chat-menu-item__container">
-        <div clas="chat-menu-item__border"></div>
+      <div class="chat-item__container">
+        <div clas="chat-item__border"></div>
 
-        <div class="chat-menu-item {{#if selected}} chat-menu-item_selected {{/if}}">
+        <div class="chat-item {{#if selected}} chat-item_selected {{/if}}">
           <div>
             {{{AvatarSimple avatar="{{avatar}}"}}}
           </div>
-          <div class="chat-menu-item__content">
-            <span class="chat-menu-item__name">{{name}}</span>
-            <p class="chat-menu-item__message">
+          <div class="chat-item__content">
+            <span class="chat-item__name">{{name}}</span>
+            <p class="chat-item__message">
               {{#if author}}
-                <span class="chat-menu-item__message__author">{{author}}:</span>
+                <span class="chat-item__message__author">{{author}}:</span>
               {{/if}}
               {{message}}
             </p>
           </div>
-          <div class="chat-menu-item__info">
-            <span class="chat-menu-item__info__date">{{date}}</span>
+          <div class="chat-item__info">
+            <span class="chat-item__info__date">{{date}}</span>
             {{#if count}}
-              <div class="chat-menu-item__info__count">{{count}}</div>  
+              <div class="chat-item__info__count">{{count}}</div>  
             {{/if}}
           </div>
         </div>
 
-        <div clas="chat-menu-item__border"></div>
+        <div clas="chat-item__border"></div>
       </div>
     `
   }

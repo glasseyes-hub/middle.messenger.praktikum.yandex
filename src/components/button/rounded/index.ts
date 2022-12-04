@@ -5,6 +5,7 @@ import {router} from '../../../router'
 
 type Props = {
   to: string,
+  onClick?():void
 }
 
 export class ButtonRoundedComponent extends Block {
@@ -15,6 +16,8 @@ export class ButtonRoundedComponent extends Block {
         onClick: () => {
           if(props.to) {
             router.push(props.to)
+          } else if(props.onClick) {
+            props.onClick()
           }
         }
       }

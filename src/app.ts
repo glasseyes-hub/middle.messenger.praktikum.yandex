@@ -26,10 +26,11 @@ import {ProfileLineComponent} from './components/profile/line'
 import {ProfileInputComponent} from './components/profile/input'
 import {ProfileLinkComponent} from './components/profile/link'
 import {ModalComponent} from './components/modal'
-import {MenuComponent} from './components/menu'
-import {MenuItemComponent} from './components/menu/item'
-import {ChatMenuItemComponent} from './components/chat/menuItem'
+import {ChatItemComponent} from './components/chat/item'
 import {ChatMessageComponent} from './components/chat/message'
+import {ChatDropdownTopComponent} from './components/chat/dropdown/dropdownTop'
+import {ChatDropdownBottomComponent} from './components/chat/dropdown/dropdownBottom'
+import {ChatDropdownItemComponent} from './components/chat/dropdown/item'
 
 
 registerComponent('Page', PageComponent)
@@ -55,10 +56,11 @@ registerComponent('ProfileLine', ProfileLineComponent)
 registerComponent('ProfileInput', ProfileInputComponent)
 registerComponent('ProfileLink', ProfileLinkComponent)
 registerComponent('Modal', ModalComponent)
-registerComponent('Menu', MenuComponent)
-registerComponent('MenuItem', MenuItemComponent)
-registerComponent('ChatMenuItem', ChatMenuItemComponent)
+registerComponent('ChatItem', ChatItemComponent)
 registerComponent('ChatMessage', ChatMessageComponent)
+registerComponent('ChatDropdownTop', ChatDropdownTopComponent)
+registerComponent('ChatDropdownBottom', ChatDropdownBottomComponent)
+registerComponent('ChatDropdownItem', ChatDropdownItemComponent)
 
 document.addEventListener('DOMContentLoaded', () => {   
     router.push(window.location.pathname)

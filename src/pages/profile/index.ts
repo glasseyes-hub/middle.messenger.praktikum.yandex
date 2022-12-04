@@ -17,29 +17,6 @@ export class ProfilePage extends Block {
     // language=hbs
     return `
       {{#ProfileContainer displayName=display_name backLink="/"}}
-        {{#Modal 
-          title="Загрузите файл" 
-          show=false 
-          error="Ошибка, попробуйте еще раз"
-        }}
-          {{#Form
-            id="changeAvatar" 
-            method="post" 
-            enctype="multipart/form-data"
-          }}
-            {{{InputFile 
-              name="avatar" 
-              title="Выбрать файл на компьютере" 
-              file="pic.jpg"
-            }}}
-          {{/Form}}
-          {{{ButtonSubmit 
-            title="Поменять" 
-            form="changeAvatar" 
-            error="Нужно выбрать файл"
-          }}}
-        {{/Modal}}
-      
         {{#ProfileContainerBlock}}
           {{{ProfileInput 
             title="Почта" 

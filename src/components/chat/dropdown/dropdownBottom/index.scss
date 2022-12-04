@@ -1,7 +1,8 @@
-@import "../../assets/styles/colors.scss";
-@import "../../assets/styles/variables.scss";
+.chat-dropdown-bottom {
+  position: relative;
+}
 
-.menu {
+.chat-dropdown-bottom__menu {
   position: absolute;
   display: none;
   flex-direction: column;
@@ -10,18 +11,10 @@
   border-radius: 12px;
   background-color: white;
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.14);
+  left: 0;
+  bottom: 55px;
 
   &_show {
     display: flex;
-  }
-
-  &_top {
-    top: 50px;
-    right: 0;
-  }
-
-  &_bottom {
-    left: 0;
-    bottom: 55px;
   }
 }

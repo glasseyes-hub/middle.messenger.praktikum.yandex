@@ -1,7 +1,7 @@
-@import "../../../assets/styles/colors.scss";
-@import "../../../assets/styles/variables.scss";
+@import "../../../../assets/styles/colors.scss";
+@import "../../../../assets/styles/variables.scss";
 
-.menu-item {
+.chat-dropdown-item {
   display: flex;
   align-items: center;
   gap: 15px;
@@ -15,7 +15,7 @@
   }
 }
 
-.menu-item__title {
+.chat-dropdown-item__title {
   font-size: 12px;
   white-space: nowrap;
   margin-right: 4px;

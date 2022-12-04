@@ -35,8 +35,8 @@ export class InputComponent extends Block {
     });
   }
 
-  get value() {
-    return (this.element as HTMLInputElement).value
+  set value(val: string) {
+     (this.element as HTMLInputElement).value = val
   }
 
   validate(value?: string) {
