@@ -1,4 +1,4 @@
-import './main.scss'
+import './main.css'
 import {registerComponent} from './utils/registerComponent'
 import './utils/ifEqualsHelper'
 import {router} from './router'
