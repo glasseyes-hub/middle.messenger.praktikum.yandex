@@ -1,13 +1,10 @@
-@import "../../assets/styles/variables.scss";
-@import "../../assets/styles/colors.scss";
-
 .avatar {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 47px;
   height: 47px;
-  background-color: $grey-lighten-2;
+  background-color: #eaeaea;
   border-radius: 50%;
 }
 

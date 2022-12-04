@@ -1,5 +1,5 @@
 import {Block} from '../../utils/Block';
-import './index.scss'
+import './index.css'
 
 
 export class AvatarComponent extends Block {
