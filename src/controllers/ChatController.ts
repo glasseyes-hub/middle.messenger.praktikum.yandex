@@ -107,7 +107,7 @@ export class ChatController {
   }
 
   static getChatData(id: number): ChatData  {
-    const data = {
+    const data: Record<number, ChatData> = {
       1: {
         id: 1,
         title: 'Андрей',
@@ -234,7 +234,7 @@ export class ChatController {
       },
     }
 
-    return data[id as string]
+    return data[id]
   }
 
   static sendMessage(data: SendMessageData) {
