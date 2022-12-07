@@ -12,11 +12,11 @@
     align-items: center;
     gap: 20px;
 
-    & h1 {
+    & .error-message__title {
       font-size: 40px;
     }
 
-    & span {
+    & .error-message__text {
       font-size: 20px;
     }
   }

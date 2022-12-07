@@ -1,0 +1,36 @@
+@import "../../../assets/styles/variables.scss";
+
+.profile-avatar {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 130px;
+  height: 130px;
+  background-color: #efefef;
+  border-radius: 50%;
+  cursor: pointer;
+
+  &::after {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    content: "Поменять\Aаватар";
+    white-space: pre;
+    text-align: center;
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: $transition-duration;
+  }
+
+  &:hover {
+    &::after {
+      opacity: 1;
+    }
+  }
+}

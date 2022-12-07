@@ -1,0 +1,22 @@
+@import "../../../../assets/styles/colors.scss";
+@import "../../../../assets/styles/variables.scss";
+
+.chat-dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 10px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: $transition-duration;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+}
+
+.chat-dropdown-item__title {
+  font-size: 12px;
+  white-space: nowrap;
+  margin-right: 4px;
+}

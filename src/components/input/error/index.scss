@@ -1,0 +1,13 @@
+@import "../../../assets/styles/colors.scss";
+@import "../../../assets/styles/variables.scss";
+
+.input-error {
+  visibility: hidden;
+  color: $warning;
+  font-size: 9px;
+  font-weight: 400;
+
+  &_show {
+    visibility: visible;
+  }
+}

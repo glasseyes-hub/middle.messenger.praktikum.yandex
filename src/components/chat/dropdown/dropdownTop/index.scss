@@ -1,0 +1,20 @@
+.chat-dropdown-top {
+  position: relative;
+}
+
+.chat-dropdown-top__menu {
+  position: absolute;
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  padding: 5px;
+  border-radius: 12px;
+  background-color: white;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.14);
+  top: 50px;
+  right: 0;
+
+  &_show {
+    display: flex;
+  }
+}

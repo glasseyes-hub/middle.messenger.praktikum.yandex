@@ -1,0 +1,45 @@
+@import "../../../assets/styles/colors.scss";
+@import "../../../assets/styles/variables.scss";
+
+.chat-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-width: 310px;
+  width: 310px;
+  height: 100%;
+  background-color: #fbfbfb;
+  border-right: 1px solid $grey-lighten-2;
+}
+
+.chat-sidebar__header {
+  display: flex;
+  flex-direction: column;
+  height: 100px;
+  padding: 20px 10px 0;
+  gap: 20px;
+}
+
+.chat-sidebar__profile {
+  display: flex;
+  justify-content: end;
+}
+
+.chat-sidebar__chats {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  overflow-y: auto;
+
+  padding-bottom: 55px;
+}
+
+// hide scrollbar but still scrollable
+.chat-sidebar__chats {
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+  scrollbar-width: none; /* Firefox */
+}
+.chat-sidebar__chats::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}

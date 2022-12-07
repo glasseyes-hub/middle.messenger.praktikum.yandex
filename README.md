@@ -1,6 +1,8 @@
 ## Описание
 
-Месседжер на Vanilla JS с использованием шаблонизатора Handlebars.
+Месседжер на TypeScript с собственной реализацией компонентов.
+
+В качестве шаблонизатора используется Handlebars.
 
 Макеты: https://www.figma.com/file/jF5fFFzgGOxQeB4CmKWTiE/Chat_external_link
 

@@ -1,0 +1,13 @@
+@import "../../../assets/styles/colors.scss";
+@import "../../../assets/styles/variables.scss";
+
+.input-labeled {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.input-labeled__label {
+  color: $grey;
+  font-size: 9px;
+}

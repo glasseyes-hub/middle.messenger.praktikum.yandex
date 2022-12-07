@@ -1,8 +1,24 @@
-.profile__input,
-.profile__input:disabled {
-  background-color: transparent;
-  border: none;
-  color: #999999;
-  text-align: right;
-  outline: none;
+@import "../../../assets/styles/colors.scss";
+@import "../../../assets/styles/variables.scss";
+
+.input-labeled.profile__input {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  flex-wrap: wrap;
+  row-gap: 8px;
+  width: 100%;
+  border-bottom: 1px solid $grey-lighten-2;
+
+  .input-labeled__label {
+    color: $black;
+    font-size: 13px;
+  }
+
+  .input {
+    text-align: right;
+    color: #999999;
+    background-color: transparent;
+    outline: none;
+    border: 0;
+  }
 }
